@@ -1,0 +1,178 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+li,
+ul,
+ol {
+  margin: 0;
+  text-indent: 0;
+  list-style-type: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  width: 100%;
+  margin: 1em 0 2em 0;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(107, 107, 107);
+}
+
+header {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 2em 0 1em 3em;
+  /* justify-content: space-around; */
+  background-color: rgb(222, 235, 239);
+  border: 1px solid grey;
+  border-bottom: none;
+}
+
+img {
+  width: 150px;
+  margin-right: 6.5em;
+}
+
+h1 {
+  font-size: 3em;
+  color: black;
+}
+
+h2 {
+  font-size: 2em;
+  color: rgb(248, 87, 29);
+}
+
+main {
+  width: 900px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  border: 1px solid grey;
+  border-top: none;
+}
+
+.section-one {
+  max-width: 600px;
+  text-align: justify;
+  padding-bottom: 2em;
+  padding-right: 2em;
+}
+
+h3 {
+  color: rgb(118, 168, 198);
+  letter-spacing: 4px;
+  margin-top: 1em;
+}
+
+h4 {
+  color: black;
+  margin: 0.7em 0 0.3em 0;
+}
+
+.date {
+  font-style: italic;
+  font-size: .9em;
+  margin-bottom: .3em;
+}
+
+.section-two {
+  width: 300px;
+  padding: 1.5em;
+  font-size: 0.85em;
+  margin-right: 3em;
+  padding-bottom: 3em;
+  background-color: rgb(222, 235, 239);
+}
+
+h5 {
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0 0 0.5em 0;
+  letter-spacing: 2px;
+}
+
+.section-two > div {
+  margin-bottom: 2.5em;
+}
+
+span {
+  font-weight: bold;
+}
