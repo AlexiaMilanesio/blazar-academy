@@ -82,31 +82,33 @@ select {
 }
 
 body {
-    font-size: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 table {
-    margin: 2em;
-    color: rgb(42, 40, 40);
+  margin: 2em;
+  color: rgb(42, 40, 40);
 }
 
 thead {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-td, th {
-    background-color: aliceblue;
-    padding: .5em 1em;
-    font-weight: lighter;
-    color: rgb(42, 40, 40);
+td,
+th {
+  background-color: aliceblue;
+  padding: 0.5em 1em;
+  font-weight: lighter;
+  color: rgb(42, 40, 40);
 }
 
 td {
-    color: grey;
+  color: grey;
 }
 
 th {
-    text-transform: uppercase;
-    font-weight: bold;
+  text-transform: uppercase;
+  font-weight: bold;
 }
