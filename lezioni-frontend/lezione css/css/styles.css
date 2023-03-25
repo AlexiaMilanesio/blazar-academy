@@ -1,3 +1,491 @@
-* {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --header-bg-violet: rgb(148, 107, 209);
+  --header-icon-liliac: rgb(206, 181, 229);
+  --section-bg-white: rgb(251, 249, 249);
+  --btn-bg-color: rgb(163, 142, 220);
+  --section-bg-dark-violet: #250455;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+/* HEADER */
+
+header {
+  background-color: var(--header-bg-violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 1em;
+}
+
+h1 {
+  color: whitesmoke;
+  font-size: 3em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.header__title--separator {
+  margin: -0.4em;
+}
+
+.header__content-container {
+}
+
+.header__content-container--separator {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+.header__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1.5em;
+  align-items: center;
+  background-color: white;
+  width: 250px;
+  height: 180px;
+  box-shadow: 1px 1px 20px rgb(99, 57, 165);
+}
+
+.header__icon-container {
+  width: 4em;
+  height: 4em;
+  background-color: var(--header-icon-liliac);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.header__icon {
+  width: 2em;
+}
+
+.header__item-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header__freepik__link {
+  color: whitesmoke;
+}
+
+.header__img {
+  width: 40%;
+}
+
+/* SECTION 2 */
+
+.section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--section-bg-white);
+}
+
+.section-1__img {
+  width: 58%;
+  margin-left: -20em;
+}
+
+.section-1__content {
+  margin-left: 3em;
+}
+
+.section-1__pill {
+  color: var(--header-bg-violet);
+  font-size: 1.1em;
+  background-color: var(--header-icon-liliac);
+  display: inline-block;
+  padding: 0.3em 2em;
+  border-radius: 5em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.section-1__freepik {
+  color: rgb(172, 169, 169);
+}
+
+.section-1__freepik a {
+  color: rgb(161, 159, 159);
+}
+
+.section-1__info {
+  margin-top: 2em;
+  max-width: 550px;
+  font-size: 1.1em;
+}
+
+.section-1__btns-container {
+  margin-top: 2em;
+  display: flex;
+}
+
+.store__img--container:first-child {
+  margin-right: 1.5em;
+}
+
+.store__img--container {
+  width: 200px;
+}
+
+.store__img {
+  max-width: 100%;
+}
+
+/* SECTION 2 */
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--section-bg-dark-violet);
+}
+
+.section-2__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  max-width: 450px;
+}
+
+.h2-title__white {
+  color: whitesmoke;
+}
+
+.section-2__info {
+  color: rgb(163, 142, 220);
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.section-2__freepik {
+  color: var(--header-icon-liliac);
+  font-size: 1.2em;
+  margin-bottom: 3em;
+}
+
+.section-2__freepik a {
+  font-size: 1em;
+}
+
+.button {
+  background-color: var(--btn-bg-color);
+  padding: 1em 3em;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button:hover {
+  background-color: rgb(227, 133, 234);
+  cursor: pointer;
+}
+
+.section-2__img {
+  width: 60%;
+  margin-right: -8em;
+}
+
+/* SECTION 3 */
+
+.section-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+  background-color: whitesmoke;
+}
+
+.section-3__info {
+  max-width: 650px;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.section-3__testimonials {
+  display: flex;
+  justify-content: center;
+}
+
+.section-3__testimonial {
+  width: 25%;
+  margin: 1em;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em 1em 3em 1em;
+}
+
+.testimonial-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.img__quot-mark {
+  margin-right: -8em;
+}
+
+.testimonial-picture__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--btn-bg-color);
+  border: 3px solid var(--btn-bg-color);
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+
+.testimonial-name p {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.testimonial-name img {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+}
+
+.section-3__testimonial-info {
+  margin-top: 2em;
+  line-height: 2em;
+  font-style: italic;
+  text-align: right;
+  color: rgb(81, 79, 79);
+}
+
+.section-3__freepik {
+  margin: 1em 0 4em 0;
+  font-style: italic;
+  color: rgb(81, 79, 79);
+}
+
+/* SECTION 4 */
+
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--section-bg-dark-violet) 0 35%,
+    var(--btn-bg-color) 35% 65%,
+    var(--section-bg-dark-violet) 65% 100%
+  );
+  padding: 3em 0;
+}
+
+.section-4__info {
+  color: whitesmoke;
+  text-align: center;
+  max-width: 700px;
+}
+
+.section-4__services-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.section-4__service {
+  background-color: whitesmoke;
+  max-width: 400px;
+  border-radius: 15px;
+  padding: 0 2em 2em 2em;
+  margin: 0 1.5em;
+  text-align: center;
+}
+
+h5 {
+  color: var(--btn-bg-color);
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+.section-4__service p {
+  margin-top: 0.9em;
+  margin-bottom: 1.7em;
+}
+
+.service__img {
+  margin: 3em 0;
+}
+
+.section-4__freepik {
+  font-style: italic;
+  color: whitesmoke;
+}
+
+/* WORK TOGETHER SECTION */
+
+.work-together-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0;
+  background-color: whitesmoke;
+}
+
+.work-together-section__info {
+  text-align: center;
+  max-width: 800px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-size: 1.1em;
+}
+
+.work-together-section__form {
+}
+
+.work-together-section__input {
+  width: 500px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: white;
+  padding: .7em 1em;
+  margin-right: 1em;
+  /* color: rgb(197, 192, 192); */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-btn {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.work-together-section__additional-info {
+  margin-top: 2em;
+  color: rgb(150, 147, 147);
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-dot__img {
+  width: 3em;
+  color: black;
+}
+
+.teams__title {
+  margin: 3.5em 0 1em 0;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.teams__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.teams__img {
+    width: 150px;
+    margin: 2em;
 }
