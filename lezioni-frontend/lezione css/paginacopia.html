@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/styles.css"/>
 
@@ -66,7 +66,7 @@
             <div class="section-1__content">
                 <p class="section-1__pill">Mobile App</p>
 
-                <h2>Stimulate your <br/>cognitive abilities <br/>while having fun</h2>
+                <h2>Stimulate your <br/>cognitive abilities while <br/>having fun</h2>
                 <p class="section-1__freepik">Images from <a href="https://www.freepik.com/" target="_blank">Freepik</a> and <a href="https://www.vecteezy.com/" target="_blank">Vecteezy</a></p>
                 <p class="section-1__info">Stimulate your cognitive abilities while having fun. Inside 'Train your brain' you will find a series of games that will help you stimulate different areas and will serve as a daily brain training.</p>
     
@@ -170,7 +170,7 @@
             <p class="work-together-section__info">Faucibus a pellentesque sit amet porttitor eget dolor. Sed euismod nisi porta lorem mollis aliquam ut porttitor. Luctus accumsan tortor posuere ac ut consequat semper fames.</p>
 
             <form class="work-together-section__form">
-                <input type="email" placeholder="Enter a valid email address" name="email" id="email"  class="work-together-section__input">
+                <input type="email" placeholder="Enter a valid email address" name="email" id="email" class="work-together-section__input">
                 <button type="submit" class="button form-btn">Try for free</button>
             </form>
 
@@ -193,6 +193,7 @@
                 <img src="https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/619f5d548d635e75bcf2f320/sony-logo.svg" alt="Sony logo" class="teams__img"/>
             </div>
         </section>
+
 
         <section class="portfolio-section">
             <div class="portfolio__app-container">
@@ -222,9 +223,8 @@
                 <p class="portfolio-section__freepik">Image from <a href="https://www.freepik.com/" target="_blank">Freepik</a></p>
                 <button class="button">Learn more</button>
             </div>
-
-            
         </section>
+
 
         <section class="about-us-section">
             <div class="about-us__img-container img-1">
@@ -234,10 +234,10 @@
                 <img src="./images/girl.jpg" alt="Woman smiling" class="about-us__img img-2"/>
             </div>
 
-            <div class="about-us">
+            <div class="about-us__card">
                 <h3 class="about-us__title">About Us</h3>
                 <p>Nunc mi ipsum faucibus vitae aliquet. Pellentesque elit eget gravida cum sociis natoque penatibus. Urna duis convallis convallis tellus id interdum velit. Proin sed libero enim sed faucibus turpis in.</p>
-                <p>Image by <a href="https://www.freepik.com/" target="_blank">Freepik</a></p>
+                <p class="about-us__freepik">Image by <a href="https://www.freepik.com/" target="_blank">Freepik</a></p>
                 <button class="button btn-border">Read more</button>
             </div>
         </section>
@@ -272,8 +272,7 @@
                 <p class="col-1__info">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
                 <div class="sub-col">
-                    <!-- icons -->
-                    <p>o</p>
+                    <i class="fa-solid fa-envelope"></i>
                     <div>
                         <p class="contact__subtitle">Chart to us</p>
                         <p class="liliac-text">Our friendly team is here to help.</p>
@@ -281,8 +280,7 @@
                     </div>
                 </div>
                 <div class="sub-col">
-                    <!-- icons -->
-                    <p>o</p>
+                    <i class="fa-solid fa-location-dot"></i>
                     <div>
                         <p class="contact__subtitle">Office</p>
                         <p class="liliac-text">Come say hello at our office HQ.</p>
@@ -290,8 +288,7 @@
                     </div>
                 </div>
                 <div class="sub-col">
-                    <!-- icons -->
-                    <p>o</p>
+                    <i class="fa-solid fa-phone"></i>
                     <div>
                         <p class="contact__subtitle">Phone</p>
                         <p class="liliac-text">Mon-Fri from 8am to 5am</p>
@@ -299,16 +296,20 @@
                     </div>
                 </div>
 
-                <div>
-                    <!-- icons -->
+                <div class="icons__container">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
                 </div>
             </div>
 
             <div class="contact-col-2">
                 <h2>Level up your brand</h2>
-                <p>You can reach us anytime via <a href="mailto:hi@ourcompany.com">hi@ourcompany.com</a></p>
+                <p>You can reach us anytime via <a href="mailto:hi@ourcompany.com" class="form_email">hi@ourcompany.com</a></p>
 
-                <form>
+                <form class="contact-form">
                     <label for="name">Name</label>
                     <input type="text" placeholder="Enter your name" name="name"/>
 
@@ -321,7 +322,7 @@
                     <label for="message">How can we help you?</label>
                     <textarea name="message"></textarea>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="button submit-btn">Submit</button>
                 </form>
             </div>
         </section>
@@ -329,7 +330,7 @@
 
     <footer>
         <p>Sample text. Click to select the Text Element.</p>
-        <p><span>Templates</span> created with <span>Best Website Builder</span>.</p>
+        <p><span class="span__link">Templates</span> created with <span class="span__link">Best Website Builder</span>.</p>
     </footer>
     
 </body>
