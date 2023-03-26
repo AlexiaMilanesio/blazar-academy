@@ -85,7 +85,7 @@ select {
 body {
   font-family: Raleway, sans-serif;
   font-size: 1.1em;
-  background-color: whitesmoke;
+  background-color: #f2f2f2;
 }
 
 /* HEADER */
@@ -109,8 +109,6 @@ h1 {
 .header__title--separator {
   margin: -0.4em;
 }
-
-/* .header__content-container {} */
 
 .header__content-container--separator {
   display: flex;
@@ -148,7 +146,7 @@ h1 {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .header__freepik__link {
@@ -172,7 +170,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: var(--section-bg-white);
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .section-1__img {
@@ -307,7 +305,6 @@ h2 {
   justify-content: center;
   align-items: center;
   padding-top: 3em;
-  background-color: whitesmoke;
 }
 
 .section-3__info {
@@ -315,7 +312,7 @@ h2 {
   text-align: center;
   margin-bottom: 3em;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .section-3__testimonials {
@@ -329,6 +326,7 @@ h2 {
   background-color: white;
   border-radius: 15px;
   padding: 1em 1em 3em 1em;
+  box-shadow: 5px 5px 10px rgba(49, 46, 46, 0.1);
 }
 
 .testimonial-name {
@@ -368,7 +366,7 @@ h2 {
 .section-3__testimonial-info {
   margin-top: 2em;
   line-height: 2em;
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
   text-align: right;
   font-family: "Open Sans", sans-serif;
@@ -378,7 +376,7 @@ h2 {
 .section-3__freepik a {
   margin: 1em 0 4em 0;
   color: black;
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
   font-family: "Open Sans", sans-serif;
 }
@@ -440,7 +438,7 @@ h5 {
   margin-top: 0.9em;
   margin-bottom: 1.7em;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .service__img {
@@ -452,7 +450,7 @@ h5 {
   font-style: italic;
   color: whitesmoke;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .section-4__freepik a {
@@ -469,7 +467,6 @@ h5 {
   justify-content: center;
   align-items: center;
   padding: 3em 0;
-  background-color: whitesmoke;
 }
 
 .work-together-section__info {
@@ -480,7 +477,6 @@ h5 {
   line-height: 1.7em;
   font-family: "Open Sans", sans-serif;
 }
-
 
 .work-together-section__input {
   width: 420px;
@@ -500,19 +496,19 @@ h5 {
 }
 
 .work-together-section__additional-info {
-  margin-top: .5em;
+  margin-top: 0.5em;
   color: #666666;
   font-style: italic;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .grey-dot__img {
   width: 1em;
-  margin: 0 .5em;
+  margin: 0 0.5em;
   color: black;
 }
 
@@ -623,14 +619,14 @@ h3 {
 
 .img-1 {
   border-radius: 10px;
-  box-shadow: 5px 5px 40px rgba(49, 46, 46, 0.5);
+  box-shadow: 5px 5px 10px rgba(49, 46, 46, 0.3);
   margin-right: -10em;
 }
 
 .img-2 {
   border-radius: 10px;
   margin-top: 10em;
-  box-shadow: 5px 5px 40px rgba(49, 46, 46, 0.5);
+  box-shadow: 5px 5px 40px rgba(49, 46, 46, 0.3);
 }
 
 .about-us__card {
@@ -647,7 +643,7 @@ h3 {
 .about-us__card p {
   margin-bottom: 1.5em;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .about-us__title {
@@ -666,7 +662,7 @@ h3 {
 }
 
 .btn-border {
-  margin-top: .5em;
+  margin-top: 0.5em;
   border: 2px solid white;
 }
 
@@ -678,7 +674,6 @@ h3 {
 /* SECTION ORU WAY */
 
 .our-way-section {
-  background-color: whitesmoke;
   padding-top: 15em;
   display: flex;
   flex-direction: column;
@@ -708,7 +703,7 @@ h3 {
   font-size: 4em;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
-  margin-bottom: .7em;
+  margin-bottom: 0.7em;
 }
 
 .year-description {
@@ -747,7 +742,7 @@ h3 {
 }
 
 i {
-  margin-top: .22em;
+  margin-top: 0.22em;
   font-size: 1.2em;
 }
 
@@ -797,8 +792,12 @@ i {
 
 .icons__container i {
   font-size: 1.5em;
-  margin-right: .8em;
+  margin-right: 0.8em;
   margin-top: 2.5em;
+}
+
+.icons__container i:hover {
+  cursor: pointer;
 }
 
 /* level up form */
@@ -834,28 +833,28 @@ i {
 
 label {
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 input {
-  padding: .7em 1em;
+  padding: 0.7em 1em;
   border: none;
   border: 1px solid rgb(212, 208, 208);
   border-radius: 5px;
   background-color: #ebeaea;
   font-family: "Open Sans", sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
   margin-bottom: 1.5em;
 }
 
 textarea {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   height: 120px;
   border: none;
   border: 1px solid rgb(212, 208, 208);
   border-radius: 5px;
   background-color: #ebeaea;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: lighter;
   margin-bottom: 1.5em;
 }
@@ -866,7 +865,6 @@ textarea {
   letter-spacing: 1px;
   font-family: "Open Sans", sans-serif;
 }
-
 
 /* FOOTER */
 
@@ -884,7 +882,7 @@ footer p:first-child {
 }
 
 footer p:last-child {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .span__link {
@@ -896,4 +894,319 @@ footer p:last-child {
   cursor: pointer;
   text-decoration: none;
   color: grey;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 390px) {
+  body {
+    font-size: 0.9em;
+  }
+
+  /* HEADER */
+
+  header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5em;
+    padding-top: 2em;
+  }
+
+  .header__item {
+    width: 160px;
+  }
+
+  .header__img {
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  /* STORES - SECTION 1 */
+
+  .section-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section-1__img {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .section-1__content {
+    margin: 0;
+    padding-left: 2em;
+  }
+
+  .section-1__info {
+    width: 90%;
+  }
+
+  .section-1__btns-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .store__img--container {
+    margin-bottom: 2em;
+  }
+
+  /* WHAT WE DO - SECTION 2 */
+
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+  }
+
+  .section-2__content {
+    padding-left: 2em;
+  }
+
+  .section-2__info {
+    width: 90%;
+  }
+
+  .section-2__img {
+    margin-right: 0;
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  /* TESTIMONIALS - SECTION 3 */
+
+  .section-3__info {
+    width: 80%;
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+
+  .section-3__testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-3__testimonial {
+    width: 80%;
+    font-size: 1.1em;
+  }
+
+  /* COMPANY SERVICES - SECTION 4 */
+
+  .section-4 {
+    background: linear-gradient(
+      180deg,
+      var(--section-bg-dark-violet) 0 20%,
+      var(--btn-bg-color) 20% 30%,
+      var(--section-bg-dark-violet) 30% 100%
+    );
+  }
+
+  .section-4__info {
+    max-width: 80%;
+  }
+
+  .section-4__services-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .section-4__service {
+    margin-bottom: 3em;
+  }
+
+  .section-4__service:last-child {
+    margin-bottom: 0;
+  }
+
+  /* WORK TOGETHER SECTION */
+
+  .work-together-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-together-section h2 {
+    font-size: 2em;
+  }
+
+  .work-together-section__info {
+    width: 75%;
+  }
+
+  .work-together-section__input {
+    width: 95%;
+    margin-right: 0;
+  }
+
+  .form-btn {
+    width: 95%;
+    margin-bottom: 2em;
+  }
+
+  .work-together-section__additional-info {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1em;
+  }
+
+  .teams__title {
+    font-size: 1.5em;
+    width: 85%;
+  }
+
+  .teams__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .teams__img {
+    width: 150px;
+    margin: 2em 1em;
+  }
+
+  /* PORTFOLIO SECTION */
+
+  .portfolio-section {
+    background: linear-gradient(
+      90deg,
+      var(--section-bg-dark-violet) 0 20%,
+      var(--btn-bg-color) 20% 80%,
+      var(--section-bg-dark-violet) 80% 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portfolio__app-container {
+    margin-bottom: 2em;
+  }
+
+  .portfolio__img-container {
+    width: 80%;
+    height: 22em;
+  }
+
+  .portfolio-section__card {
+    position: static;
+    float: none;
+    margin-top: 0;
+    margin-right: 0;
+    width: 80%;
+    z-index: 1;
+  }
+
+  /* ABOUT US SECTION */
+
+  .about-us-section {
+    margin-top: -50em;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-us__card {
+    width: 70%;
+    margin-right: -4em;
+    z-index: 100;
+    font-size: 1.1em;
+  }
+
+  .about-us__img-container {
+    width: 70%;
+    height: 400px;
+    margin-right: -4em;
+  }
+
+  .img-1 {
+    margin-right: 0;
+    margin-top: -32em;
+    margin-left: -4em;
+  }
+
+  .img-2 {
+    margin-top: 18em;
+    position: relative;
+  }
+
+  .about-us__card {
+    margin-left: 0;
+  }
+
+  /* ON OUR WAY SECTION */
+
+  .our-way-section {
+    margin-top: 15em;
+  }
+
+  .our-way-section__info {
+    width: 80%;
+    font-size: 1.3em;
+  }
+
+  .years-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .year {
+    margin-top: 0.7em;
+  }
+
+  .year-description {
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  /* CONTACT SECTION */
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    padding: 3em 1em;
+    font-size: 1.1em;
+  }
+
+  .contact-col-1,
+  .contact-col-2 {
+    width: 90%;
+    margin: 0;
+    padding: 2em;
+  }
+
+  .icons__container {
+    margin-top: -1.5em;
+    margin-bottom: 1.6em;
+    font-size: 1.2em;
+  }
+
+  .submit-btn {
+    margin-bottom: 1em;
+  }
+
+  /* FOOTER */
+
+  footer {
+    font-size: 0.9em;
+  }
 }
