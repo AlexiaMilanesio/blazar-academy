@@ -1,0 +1,17 @@
+Ottimo lavoro...poco da dire, già conosci bene il modo in cui creare una pagina web.
+Puoi leggermente migliorare la navigazione del tuo css ad esempio inserendo una TABLE OF CONTENT all'inizio.
+Ho provato a organizzarlo un po' di più...solo css ovviamente è limitante dal punto di vista dell'organizzazione e della modularità.
+
+Potresti provare a sperimentare un po' di più con grid. 
+Un layout con grid ti permette di avere un html più semplice, e forse riesci ad evitare qualche media query...
+Ti suggerisco questa guida https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+
+Un'altra cosa che puoi iniziare a vedere è come ottimizzare il tuo sito, partendo dagli assets.
+Quando un utente accede al tuo sito da uno smartphone, le immagini che dovremmo fornirgli non dovrebbero essere grandi quanto quelle che 
+gli forniamo su un desktop. Oltretutto, gli smartphone hanno una connessione peggiore rispetto alla rete domestica, quindi con delle immagini 
+inutilmente pesanti il sito si caricherebbe molto lentamente.
+La soluzione è nell'attributo srcset del HTML Image Element:
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+Arrivata a questo punto cerca di rimanere aggiornata con le ultime novità su cosa css è in grado di fare.
+Davvero, non ho nient'altro da suggerirti...complimenti! Sei davvero brava!
