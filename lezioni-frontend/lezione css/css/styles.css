@@ -1,3 +1,28 @@
+/*****************************/
+/*     TABLE OF CONTENTS     */
+/*****************************/
+/*  1. global-rules          */
+/*  2. utilities             */
+/*  3. components            */
+/*  4. HEADER                */
+/*  5. SECTION 1             */ 
+/*  6. SECTION 2             */
+/*  7. SECTION 3             */
+/*  8. SECTION 4             */
+/*  9. WORK TOGETHER SECTION */
+/* 10. PORTFOLIO SECTION     */
+/* 11. SECTION ABOUT US      */
+/* 12. SECTION OUR WAY       */
+/* 13. CONTACT SECTION       */
+/* 14. level up form         */
+/* 15. FOOTER                */
+/* 16. MEDIA QUERIES         */
+/*****************************/
+
+/* in questo modo basta selezionare un nome e fare ctrl + f per navigare */
+
+/****** global-rules ******/
+
 /* Box sizing rules */
 *,
 *::before,
@@ -88,7 +113,58 @@ body {
   background-color: #f2f2f2;
 }
 
-/* NAVBAR */
+h1 {
+  color: whitesmoke;
+  font-size: 3em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+
+h5 {
+  color: var(--btn-bg-color);
+  font-size: 1.8em;
+  margin: 0;
+  padding: 0;
+}
+
+/***** utilities ******/
+
+.color-white {
+  color: whitesmoke;
+}
+
+/***** components *****/
+
+.button {
+  background-color: var(--btn-bg-color);
+  padding: 1em 2.7em;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-size: 0.86em;
+  letter-spacing: 3px;
+  font-family: Raleway, sans-serif;
+}
+
+.button:hover {
+  background-color: var(--highlight-pink);
+  cursor: pointer;
+}
+
+/***** HEADER ******/
 
 nav {
   display: flex;
@@ -110,25 +186,6 @@ nav {
   font-size: 1.2em;
   margin: -1.1em;
   transform: rotate(90deg);
-}
-
-/* HEADER */
-
-header {
-  background-color: var(--header-bg-violet);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: auto;
-  padding: 2em 1em 0 1em;
-}
-
-h1 {
-  color: whitesmoke;
-  font-size: 3em;
-  line-height: 1.1em;
-  margin-bottom: 0.5em;
 }
 
 .header__title--separator {
@@ -195,7 +252,7 @@ h1 {
   justify-self: end;
 }
 
-/* SECTION 1 */
+/***** SECTION 1 *****/
 
 .section-1 {
   display: flex;
@@ -246,12 +303,6 @@ h1 {
   margin-bottom: 1em;
 }
 
-h2 {
-  font-size: 3em;
-  line-height: 1.1em;
-  margin-bottom: 0.5em;
-}
-
 .section-1__freepik {
   color: #999999;
   font-family: "Open Sans", sans-serif;
@@ -288,7 +339,7 @@ h2 {
   max-width: 100%;
 }
 
-/* SECTION 2 */
+/****** SECTION 2 ******/
 
 .section-2 {
   display: flex;
@@ -303,10 +354,6 @@ h2 {
   justify-content: center;
   align-items: start;
   max-width: 450px;
-}
-
-.h2-title__white {
-  color: whitesmoke;
 }
 
 .section-2__info {
@@ -328,30 +375,14 @@ h2 {
   border-bottom: 1px solid #d8c8f2;
 }
 
-.button {
-  background-color: var(--btn-bg-color);
-  padding: 1em 2.7em;
-  border: none;
-  border-radius: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: whitesmoke;
-  font-size: 0.86em;
-  letter-spacing: 3px;
-  font-family: Raleway, sans-serif;
-}
 
-.button:hover {
-  background-color: var(--highlight-pink);
-  cursor: pointer;
-}
 
 .section-2__img {
   width: 60%;
   margin-right: -8em;
 }
 
-/* SECTION 3 */
+/***** SECTION 3 *****/
 
 .section-3 {
   display: flex;
@@ -450,7 +481,7 @@ h2 {
   border-bottom: 1px solid black;
 }
 
-/* SECTION 4 */
+/***** SECTION 4 ******/
 
 .section-4 {
   display: flex;
@@ -490,13 +521,6 @@ h2 {
   text-align: center;
 }
 
-h5 {
-  color: var(--btn-bg-color);
-  font-size: 1.8em;
-  margin: 0;
-  padding: 0;
-}
-
 .section-4__service p {
   margin-top: 0.9em;
   margin-bottom: 1.7em;
@@ -522,7 +546,7 @@ h5 {
   border-bottom: 1px solid whitesmoke;
 }
 
-/* WORK TOGETHER SECTION */
+/***** WORK TOGETHER SECTION *****/
 
 .work-together-section {
   display: flex;
@@ -592,7 +616,7 @@ h5 {
   margin: 2em 2em 4em 2em;
 }
 
-/* PORTFOLIO SECTION */
+/***** PORTFOLIO SECTION ******/
 
 .portfolio-section__padding {
   padding-top: 4em;
@@ -630,11 +654,6 @@ h5 {
   object-fit: cover;
 }
 
-h3 {
-  font-size: 2em;
-  margin-bottom: 0.3em;
-}
-
 .portfolio-section__card {
   background-color: whitesmoke;
   border-radius: 10px;
@@ -664,7 +683,7 @@ h3 {
   border-bottom: 1px solid black;
 }
 
-/* SECTION ABOUT US */
+/***** SECTION ABOUT US *****/
 
 .about-us-section {
   display: flex;
@@ -739,7 +758,7 @@ h3 {
   color: var(--btn-bg-color);
 }
 
-/* SECTION OUR WAY */
+/***** SECTION OUR WAY ******/
 
 .our-way-section {
   padding-top: 18em;
@@ -781,7 +800,7 @@ h3 {
   line-height: 1.6em;
 }
 
-/* CONTACT SECTION */
+/***** CONTACT SECTION *****/
 
 .contact-section {
   background-color: var(--section-bg-dark-violet);
@@ -867,7 +886,7 @@ i {
   cursor: pointer;
 }
 
-/* level up form */
+/***** level up form *****/
 
 .contact-col-2 {
   background-color: whitesmoke;
@@ -933,7 +952,7 @@ textarea {
   font-family: "Open Sans", sans-serif;
 }
 
-/* FOOTER */
+/***** FOOTER *****/
 
 footer {
   background-color: #333333;
@@ -963,7 +982,7 @@ footer p:last-child {
   color: grey;
 }
 
-/* MEDIA QUERIES */
+/***** MEDIA QUERIES *****/
 
 @media (max-width: 800px) {
   
