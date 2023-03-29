@@ -129,10 +129,26 @@ function divisibleSumPairs(n, k, ar) {
  * The function accepts following parameters:
  *  1. INTEGER_ARRAY a
  *  2. INTEGER_ARRAY b
+ * 
+ * 
+ * If a[i] > b[i], then person a is awarded 1 point.
+ * If a[i] < b[i], then person b is awarded 1 point.
+ * If a[i] = b[i], then neither person receives a point.
  */
 
 function compareTriplets(a, b) {
     // Write your code here
+    let score = [0,0];
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] > b[i]) {
+            score[0]++;
+        }
+        if (a[i] < b[i]) {
+            score[1]++;
+        }  
+    }
+    return score;
 }
 
 
