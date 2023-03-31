@@ -12,13 +12,13 @@
 
 function reverseArray(a) {
     // Write your code here
-    let reversedArray = [];
+    return a.reverse();
 
-    for (let i = a.length - 1; i >= 0; i--) {          
-        reversedArray.push(a[i]);
-    }
-
-    return reversedArray;
+    // let reversedArray = [];
+    // for (let i = a.length - 1; i >= 0; i--) {          
+    //     reversedArray.push(a[i]);
+    // }
+    // return reversedArray;
 }
 
 // i = a.length-1 | i = 5-1 | i = 4  
@@ -39,7 +39,7 @@ function reverseArray(a) {
 
 function simpleArraySum(ar) {
     // Write your code here
-    return ar.reduce((accumulator, currentValue) => accumulator + currentValue);
+    return ar.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
 
 
@@ -54,37 +54,44 @@ function simpleArraySum(ar) {
 
 function staircase(n) {
     // Write your code here
-    for (let i = 0; i < n; i++) {              // while i is smaller than n or smaller or equal to n - 1
-        let staricase = "";
+    // for (let i = 0; i < n; i++) {              // while i is smaller than n or smaller or equal to n - 1
+    //     let staircase = "";
 
-        for (let j = 0; j < n-i-1; j++) {      // while j is smaller than "n - iteration number - 1"
-            staricase += " ";
-        }   
+    //     for (let j = 0; j < n-i-1; j++) {      // while j is smaller than "n - iteration number - 1"
+    //         staircase += " ";
+    //     }   
+    //     for (let k = 0; k < i+1; k++) {        // while k is smaller than "iteration number + 1"
+    //         staircase += "#";                  
+    //     }
+    //     console.log(staircase);
+    // }
 
-        for (let k = 0; k < i+1; k++) {        // while k is smaller than "iteration number + 1"
-            staricase += "#";                  
-        }
+    let result = "";
 
-        console.log(staricase);
+    for (let i = 1; i <= n; i++) {
+        const space = " ".repeat(n - i);
+        const hashtag = "#".repeat(i);
+        result += space + hashtag + "\n";
     }
+    console.log(result);
 }
 
 
 //* n = 5
 //* ssss#  --->  i=0  s=4  #=1  
-//         --->  s = n-i-1 | s=5-0-1   | s = 4  
+//         --->  s = n-i-1 | s= 5-0-1 | s = 4  
 //         --->  # = i+1   | # = 0 + 1 | # = 1
 //* sss##  --->  i=1  s=3  #=2  
-//         --->  s = n-i-1 | s=5-1-1   | s = 3  
+//         --->  s = n-i-1 | s= 5-1-1  | s = 3  
 //         --->  # = i+1   | # = 1 + 1 | # = 2 
 //* ss###  --->  i=2  s=2  #=3  
-//         --->  s = n-i-1 | s=5-2-1   | s = 2  
+//         --->  s = n-i-1 | s= 5-2-1  | s = 2  
 //         --->  # = i+1   | # = 2 + 1 | # = 3 
 //* s####  --->  i=3  s=1  #=4  
-//         --->  s = n-i-1 | s=5-3-1   | s = 1  
+//         --->  s = n-i-1 | s= 5-3-1  | s = 1  
 //         --->  # = i+1   | # = 3 + 1 | # = 4 
 //* #####  --->  i=4  s=0  #=5  
-//         --->  s = n-i-1 | s=5-4-1   | s = 0  
+//         --->  s = n-i-1 | s= 5-4-1  | s = 0  
 //         --->  # = i+1   | # = 4 + 1 | # = 5 
 
 
@@ -107,14 +114,13 @@ function divisibleSumPairs(n, k, ar) {
     let counter = 0;
 
     for (let i = 0; i < n; i++) {
-        for(let j = i + 1; j < n; j++) {
+        for(let j = i+1; j < n; j++) {
             let sum = ar[i] + ar[j];
             if (sum % k === 0) {
                 counter++;
             }   
         }
     }
-
     return counter;
 }
 
@@ -138,7 +144,7 @@ function divisibleSumPairs(n, k, ar) {
 
 function compareTriplets(a, b) {
     // Write your code here
-    let score = [0,0];
+    let score = [0, 0];
 
     for (let i = 0; i < a.length; i++) {
         if (a[i] > b[i]) {
@@ -164,5 +170,21 @@ function compareTriplets(a, b) {
 
 function hourglassSum(arr) {
     // Write your code here
-
+    const sumHourglass = (row, col) => {                 // Sum the corresponding "coordinates" within the matrix
+        return arr[row][col] + arr[row][col+1] + arr[row][col+2] + 
+               arr[row+1][col+1] +
+               arr[row+2][col] + arr[row+2][col+1] + arr[row+2][col+2]
+    }
+    
+    let max = -Infinity;                               
+    const sums = [];                                   
+    
+    for (let i = 0; i < arr.length - 2; i++) {         // Row moves (the array length is always 6, so we only can iterate through it 4 times)
+        for (let j = 0; j < arr[i].length; j++) {      // Column moves
+            const sum = sumHourglass(i, j);            // Calculate every possible sum
+            
+            max = sum > max ? sum : max;               // Calculate the maximum possible
+        }
+    }
+    return max;
 }
