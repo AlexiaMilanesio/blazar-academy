@@ -139,25 +139,27 @@ function hourglassSum(arr) {
 
 // **************** Climbing the leaderboard ******************* //
 
-
+// OK passa tutti i test
 function climbingLeaderboard(ranked, player) {
     let rankingNumbers = [];                                                
     let scoresSet = [...new Set(ranked)];  
     let index = scoresSet.length -1;
 
-    for (const score of player) {
+    for (const score of player) {        
         while (index >= 0) {
             // While player's score is higher or equal to the score on the current position of the leaderboard, decrement position in 1
             if (score >= scoresSet[index]) index--;
 
             // If player's score is lower than the score on the current position of the leaderboard, push the position to the rankingNumbers array
-            // +2 because 1) index is not the same as position (+1) and 2) we have a number that repeats 1 time (+1) 
+            // +2 because 1) index is not the same as position (+1) and 2) we have a repeated number (+1) 
             else {
                 rankingNumbers.push(index + 2);  
                 break; 
             }
         }
         if (index < 0) rankingNumbers.push(1);
+
+        console.log(index);
         console.log(rankingNumbers);
     }
     return rankingNumbers;
