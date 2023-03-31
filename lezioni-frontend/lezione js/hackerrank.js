@@ -146,12 +146,6 @@ function climbingLeaderboard(ranked, player) {
     let index = scoresSet.length -1;
 
     for (const score of player) {
-
-        console.log(index);
-        console.log(scoresSet[index]);
-        console.log(score);
-        console.log(rankingNumbers);
-
         while (index >= 0) {
             // While player's score is higher or equal to the score on the current position of the leaderboard, decrement position in 1
             if (score >= scoresSet[index]) index--;
@@ -164,10 +158,10 @@ function climbingLeaderboard(ranked, player) {
             }
         }
         if (index < 0) rankingNumbers.push(1);
+        console.log(rankingNumbers);
     }
     return rankingNumbers;
 }
-
 
 
 // ************************** TESTS *************************** //
@@ -178,19 +172,3 @@ let player1 = [50, 65, 77, 90, 102];
 const results1 = climbingLeaderboard(ranked1, player1);
 console.log(results1);
 // rankingNumbers = [ 6, 5, 4, 2, 1 ];
-
-
-// let ranked2 = [150, 90, 90, 80, 60, 50];
-// let player2 = [45, 65, 80, 100, 160];
-
-// const results2 = climbingLeaderboard(ranked2, player2);
-// console.log(results2); 
-// // rankingNumbers = [ 6, 4, 3, 2, 1 ];
-
-
-// let ranked3 = [100, 90, 80, 50, 40, 40];
-// let player3 = [30, 45, 75, 95, 105];
-
-// const results3 = climbingLeaderboard(ranked3, player3);
-// console.log(results3); 
-// // rankingNumbers = [ 6, 5, 4, 2, 1];
