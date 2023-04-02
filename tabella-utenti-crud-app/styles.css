@@ -3,6 +3,40 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(244, 208, 214), rgb(189, 189, 237));
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 3em;
+    text-align: center;
+}
+
+table {
+    background-color: rgba(222, 236, 241, .8);
+    padding: 2em 3em;
+}
+
+th {
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+td {
+    padding: .5em 2em .5em .5em;
+    border: 1px solid white;
+    font-family: monospace;
+    font-size: 1.2em;
 }

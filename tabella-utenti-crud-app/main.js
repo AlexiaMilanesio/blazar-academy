@@ -1,7 +1,7 @@
 const title = document.createElement("h1");
 const table = document.createElement("table");
 
-title.textContent = "Lista degli utenti";
+title.textContent = "List of users";
 let data;
 let usersValues;
 
@@ -53,8 +53,6 @@ async function getUsers () {
 
     data = Object.keys(allUsers[0]);
     usersValues = Object.values(allUsers);
-    // console.log(data);
-    // console.log(usersValues);
 
     generateTableHead(table, data);
     generateTable(table, usersValues);
