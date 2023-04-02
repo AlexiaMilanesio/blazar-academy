@@ -22,13 +22,14 @@ const createEl = (todo) => {
 
 
 // GET
-const getTodos = fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => res.json())
-  .then((todoList) => {
-    for (const todo of todoList.slice(0, 10)) {
-      createEl(todo.title);
-    }
-  });
+const getTodos = () => 
+  fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((res) => res.json())
+    .then((todoList) => {
+      for (const todo of todoList.slice(0, 10)) {
+        createEl(todo.title);
+      }
+    });
 
 getTodos();
 
