@@ -1,5 +1,6 @@
 const title = document.createElement("h1");
 const table = document.createElement("table");
+const arrow = document.createElement("span");
 const input1 = document.createElement("input");
 const input2 = document.createElement("input");
 const input3 = document.createElement("input");
@@ -13,6 +14,7 @@ let data;
 let usersValues;
 
 title.textContent = "List of users";
+arrow.textContent = "↓";
 subtitle.textContent = "Add a new user";
 button.textContent = "Add user";
 input1.placeholder = "Enter user's name";
@@ -22,12 +24,15 @@ input4.placeholder = "Enter user's phone";
 
 document.body.appendChild(title);
 document.body.appendChild(table);
+document.body.appendChild(arrow);
 document.body.appendChild(subtitle);
 document.body.appendChild(input1);
 document.body.appendChild(input2);
 document.body.appendChild(input3);
 document.body.appendChild(input4);
 document.body.appendChild(button);
+
+
 
 // Generate table head
 const generateTableHead = (table, data) => {
@@ -43,6 +48,7 @@ const generateTableHead = (table, data) => {
 };
 
 
+
 // Generate table content
 const generateTable = (table, data) => {
   for (let element of data) {
@@ -55,6 +61,7 @@ const generateTable = (table, data) => {
     }
   }
 };
+
 
 
 // Get users
@@ -82,41 +89,59 @@ async function getUsers() {
   return allUsers;
 }
 
+
 getUsers();
 
 
-td.addEventListener("click", () => {
-    confirm("You are trying to delete a user, are you sure you want to continue?" ? Yes : No)
-    if (Yes) {
-        alert("User deleted successfully");
+
+// POST
+const createUser = (newUser) => {
+  const t = document.querySelector("table");
+  let row = t.insertRow();
+
+    for (let key in newUser) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(newUser[key]);
+      cell.appendChild(text);
     }
-})
+}
 
 
-// Form - post call
-// /**
-//  * sends a request to the specified url from a form. this will change the window location.
-//  * @param {string} path the path to send the post request to
-//  * @param {object} params the parameters to add to the url
-//  * @param {string} [method=post] the method to use on the form
-//  */
+button.addEventListener("click", () => {
+  console.log("Click registrado")
+  fetch("https://jsonplaceholder.typicode.com/users", {
+    method: "POST",
+    body: JSON.stringify({
+      name: input1.value,
+      username: input2.value,
+      email: input3.value,
+      phone: input4.value,
+    }),
+  }).then((res) => {
+    if (res.ok) {
+      if (input1.value !== "" && input2.value !== "" && input3.value !== "" && input4.value !== "") {
+        createUser({
+          name: input1.value, 
+          username: input2.value, 
+          email: input3.value, 
+          phone: input4.value
+        });
+      };
+    }
+  });
+});
 
-// function post(path, params, method = "post") {
-//   const form = document.createElement("form");
-//   form.method = method;
-//   form.action = path;
 
-//   for (const key in params) {
-//     if (params.hasOwnProperty(key)) {
-//       const hiddenField = document.createElement("input");
-//       hiddenField.type = "hidden";
-//       hiddenField.name = key;
-//       hiddenField.value = params[key];
 
-//       form.appendChild(hiddenField);
-//     }
+
+// DELETE
+// td.addEventListener("click", () => {
+//   confirm(
+//     "You are trying to delete a user, are you sure you want to continue?"
+//       ? Yes
+//       : No
+//   );
+//   if (Yes) {
+//     alert("User deleted successfully");
 //   }
-
-//   document.body.appendChild(form);
-//   form.submit();
-// }
+// });
