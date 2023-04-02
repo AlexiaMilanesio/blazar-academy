@@ -40,3 +40,15 @@ td {
     font-family: monospace;
     font-size: 1.2em;
 }
+
+input {
+    display: inline;
+    margin-top: 3em;
+    padding: .8em 2em;
+    min-width: 400px;
+}
+
+button {
+    margin-top: -2.3em;
+    margin-left: 45em;
+}
