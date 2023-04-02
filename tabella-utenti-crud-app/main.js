@@ -1,7 +1,11 @@
 const title = document.createElement("h1");
 const table = document.createElement("table");
-const input = document.createElement("input");// Form + POST
-const button = document.createElement("button");// Form + POST
+const input1 = document.createElement("input");
+const input2 = document.createElement("input");
+const input3 = document.createElement("input");
+const input4 = document.createElement("input");
+const button = document.createElement("button");
+const subtitle = document.createElement("h2");
 
 const td = document.querySelector("td");
 
@@ -9,12 +13,21 @@ let data;
 let usersValues;
 
 title.textContent = "List of users";
+subtitle.textContent = "Add a new user";
 button.textContent = "Add user";
+input1.placeholder = "Enter user's name";
+input2.placeholder = "Enter user's username";
+input3.placeholder = "Enter user's email";
+input4.placeholder = "Enter user's phone";
 
 document.body.appendChild(title);
 document.body.appendChild(table);
-document.body.appendChild(input);// Form + POST
-document.body.appendChild(button);// Form + POST
+document.body.appendChild(subtitle);
+document.body.appendChild(input1);
+document.body.appendChild(input2);
+document.body.appendChild(input3);
+document.body.appendChild(input4);
+document.body.appendChild(button);
 
 // Generate table head
 const generateTableHead = (table, data) => {

@@ -17,8 +17,16 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    margin-top: 3em;
+    font-family: monospace;
+    font-size: 2.5em;
+    text-align: center;
+}
+
 table {
     background-color: rgba(222, 236, 241, .8);
+    border-radius: 5px;
     padding: 2em 3em;
 }
 
@@ -43,12 +51,32 @@ td {
 
 input {
     display: inline;
-    margin-top: 3em;
-    padding: .8em 2em;
+    margin: .5em;
+    padding: 1em;
     min-width: 400px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: .9em;
 }
 
 button {
-    margin-top: -2.3em;
-    margin-left: 45em;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid lightsteelblue;
+    background-color: lightsteelblue;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: .9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 250ms ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 2px solid white;
 }
