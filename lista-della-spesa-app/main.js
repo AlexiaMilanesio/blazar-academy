@@ -104,9 +104,10 @@ const addTodo = () => {
     // Save to local storage
     localStorage.setItem("tasks", JSON.stringify(tasks));
     // Reload page
-    location.reload();
+    // TODO: come migliorare questo?
+    location.reload(); 
     // Update DOM
-    renderTodo(input.value.name);
+    renderTodo(input.value.name); 
 
     input.value = "";
   }

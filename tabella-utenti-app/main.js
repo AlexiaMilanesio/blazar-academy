@@ -1,3 +1,5 @@
+const URL = "https://jsonplaceholder.typicode.com/users";
+
 const title = document.createElement("h1");
 const table = document.createElement("table");
 const arrow = document.createElement("span");
@@ -83,10 +85,10 @@ const generateTable = (table, data) => {
 
 
 // Get all users - GET
-async function getUsers() {
+const getUsers = async () => {
   let allUsers;
 
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const response = await fetch(URL);
   const users = await response.json();
 
   allUsers = users.map((user) => {
@@ -127,7 +129,7 @@ const createUser = (newUser) => {
 
 
 button.addEventListener("click", () => {
-  fetch("https://jsonplaceholder.typicode.com/users", {
+  fetch(URL, {
     method: "POST",
     body: JSON.stringify({
       name: input1.value,

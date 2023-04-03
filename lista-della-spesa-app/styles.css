@@ -70,8 +70,8 @@ ul {
   flex-wrap: wrap;
   margin-bottom: 5em;
 
-  -webkit-column-count: 3;
-  column-count: 3;
+  -webkit-column-count: 5;
+  column-count: 5;
   max-height: 550px;
 }
 
