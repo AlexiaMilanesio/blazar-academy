@@ -5,7 +5,6 @@ const list = document.createElement("ul");
 
 let tasks;
 let taskId = 0;
-let clickCount = 0;
 
 title.textContent = "Lista della spesa";
 button.textContent = "+";
@@ -44,35 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (const item of li) {
     item.addEventListener("click", () => {
-      clickCount++;
-
       // COMPLETED TASK
-      if (clickCount === 1) {
-        // Marked as completed
-        item.classList.toggle("completed");
-        // Update checked value in tasks array
-        tasks = tasks.map((task) => {
-          if (task.name === item.innerHTML) task.checked = !task.checked;
-          return task;
-        });
+      // Marked as completed
+      item.classList.toggle("completed");
+      // Update checked value in tasks array
+      tasks = tasks.map((task) => {
+        if (task.name === item.innerHTML) task.checked = !task.checked;
+        return task;
+      });
 
-        saveTasksToLocalStorage();
-
-        setTimeout(() => (clickCount = 0), 300);
-      }
-
-      // DELETE TASK
-      else if (clickCount === 2) {
-        // Remove from DOM
-        item.parentNode.removeChild(item);
-        // Remove from tasks array
-        tasks = tasks.filter((task) => task.name !== item.innerHTML);
-        
-        saveTasksToLocalStorage();
-
-        clickCount = 0;
-      }
+      saveTasksToLocalStorage();
     });
+    
+    item.addEventListener('dblclick', () => {
+      // Remove from DOM
+      item.parentNode.removeChild(item);
+      // Remove from tasks array
+      tasks = tasks.filter((task) => task.name !== item.innerHTML);
+      
+      saveTasksToLocalStorage();
+    })
   }
 });
 
