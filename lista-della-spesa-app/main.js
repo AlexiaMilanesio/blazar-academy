@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
           if (task.name === item.innerHTML) task.checked = !task.checked;
           return task;
         });
-        // Update local storage
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        saveTasksToLocalStorage();
 
         setTimeout(() => (clickCount = 0), 300);
       }
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         item.parentNode.removeChild(item);
         // Remove from tasks array
         tasks = tasks.filter((task) => task.name !== item.innerHTML);
-        // Remove from/update local storage
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        
+        saveTasksToLocalStorage();
 
         clickCount = 0;
       }
@@ -101,8 +101,7 @@ const addTodo = () => {
       checked: false,
     });
 
-    // Save to local storage
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasksToLocalStorage();
     // Reload page
     // TODO: come migliorare questo?
     location.reload(); 
@@ -114,3 +113,7 @@ const addTodo = () => {
 };
 
 button.addEventListener("click", addTodo);
+function saveTasksToLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
