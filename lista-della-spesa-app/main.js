@@ -106,7 +106,7 @@ const addTodo = () => {
     // TODO: come migliorare questo?
     location.reload(); 
     // Update DOM
-    renderTodo(input.value.name); 
+    renderTodo(input.value); 
 
     input.value = "";
   }
