@@ -25,10 +25,32 @@ const getTasksFromLocalStorage = () => {
 };
 
 // RENDER TASKS
-const renderTodo = (text) => {
+const createTask = (text) => {
   const newTask = document.createElement("li");
   newTask.textContent = text;
   list.appendChild(newTask);
+
+  newTask.addEventListener("click", () => {
+    // COMPLETED TASK
+    // Marked as completed
+    newTask.classList.toggle("completed");
+    // Update checked value in tasks array
+    tasks = tasks.map((task) => {
+      if (task.name === newTask.innerHTML) task.checked = !task.checked;
+      return task;
+    });
+
+    saveTasksToLocalStorage();
+  });
+  
+  newTask.addEventListener('dblclick', () => {
+    // Remove from DOM
+    newTask.remove();
+    // Remove from tasks array
+    tasks = tasks.filter((task) => task.name !== newTask.innerHTML);
+    
+    saveTasksToLocalStorage();
+  })
 };
 
 // When page loads get tasks from local storage and create them
@@ -36,34 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
   getTasksFromLocalStorage();
 
   tasks.forEach((savedTaskText) => {
-    renderTodo(savedTaskText.name);
+    createTask(savedTaskText.name);
   });
 
-  const li = getListItems();
-
-  for (const item of li) {
-    item.addEventListener("click", () => {
-      // COMPLETED TASK
-      // Marked as completed
-      item.classList.toggle("completed");
-      // Update checked value in tasks array
-      tasks = tasks.map((task) => {
-        if (task.name === item.innerHTML) task.checked = !task.checked;
-        return task;
-      });
-
-      saveTasksToLocalStorage();
-    });
-    
-    item.addEventListener('dblclick', () => {
-      // Remove from DOM
-      item.parentNode.removeChild(item);
-      // Remove from tasks array
-      tasks = tasks.filter((task) => task.name !== item.innerHTML);
-      
-      saveTasksToLocalStorage();
-    })
-  }
 });
 
 window.addEventListener("load", () => {
@@ -92,11 +89,8 @@ const addTodo = () => {
     });
 
     saveTasksToLocalStorage();
-    // Reload page
-    // TODO: come migliorare questo?
-    location.reload(); 
-    // Update DOM
-    renderTodo(input.value); 
+    
+    createTask(input.value); 
 
     input.value = "";
   }
