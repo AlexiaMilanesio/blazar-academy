@@ -38,21 +38,55 @@ th {
     font-size: 1.2em;
 }
 
+th:first-child {
+    display: none;
+}
+
+th:last-child {
+    display: none;
+}
+
 tr {
     border-bottom: 1px solid black;
 }
 
 td {
-    padding: .5em 2em .5em .5em;
+    padding: .5em 1em .5em .5em;
     border: 1px solid white;
     font-family: monospace;
     font-size: 1.2em;
 }
 
+td:first-child {
+    display: none;
+    padding: 1;
+    text-align: center;
+}
+
+td:last-child {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+td:last-child:hover {
+  border: 2px solid yellow;
+  cursor: pointer;
+}
+
 span {
     margin-top: 2em;
     font-size: 3em;
-    
 }
 
 input {
@@ -74,7 +108,7 @@ button {
     border: 1px solid lightsteelblue;
     background-color: lightsteelblue;
     margin-top: 2em;
-    margin-bottom: 5em;
+    margin-bottom: 15em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: .9em;
     text-transform: uppercase;
@@ -84,5 +118,5 @@ button {
 
 button:hover {
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid yellow;
 }

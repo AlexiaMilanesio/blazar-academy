@@ -8,8 +8,6 @@ const input4 = document.createElement("input");
 const button = document.createElement("button");
 const subtitle = document.createElement("h2");
 
-const td = document.querySelector("td");
-
 let data;
 let usersValues;
 
@@ -48,23 +46,43 @@ const generateTableHead = (table, data) => {
 };
 
 
+// Delete user - DELETE - NOT FINISHED
+const deleteUser = (e, user) => {
+  console.log(e.target)
+  // console.log("Deleted user: " + user.name);
+
+  // fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`, {
+  //   method: "DELETE",
+  // })
+  // .then(res => res.json())
+  // .then(user => console.log("Deleted user: " + user.name));
+}
+
 
 // Generate table content
 const generateTable = (table, data) => {
-  for (let element of data) {
+  for (let user of data) {
     let row = table.insertRow();
 
-    for (let key in element) {
+    for (let key in user) {
       let cell = row.insertCell();
-      let text = document.createTextNode(element[key]);
+      let text = document.createTextNode(user[key]);
       cell.appendChild(text);
+
+      // Adding event listener to delete button - NOT FINISHED
+      // const td = document.querySelectorAll("td");
+
+      // Array.from(td).forEach(item => {
+      //   if (item.innerHTML === "x") {
+      //     item.addEventListener("click", (e) => deleteUser(e, user));
+      //   }
+      // });
     }
   }
 };
 
 
-
-// Get users
+// Get all users - GET
 async function getUsers() {
   let allUsers;
 
@@ -73,10 +91,12 @@ async function getUsers() {
 
   allUsers = users.map((user) => {
     return {
+      id: user.id,
       name: user.name,
       username: user.username,
       email: user.email,
       phone: user.phone,
+      deleteBtn: "x"
     };
   });
 
@@ -89,12 +109,11 @@ async function getUsers() {
   return allUsers;
 }
 
-
 getUsers();
 
 
 
-// POST
+// Add new user - POST
 const createUser = (newUser) => {
   const t = document.querySelector("table");
   let row = t.insertRow();
@@ -108,7 +127,6 @@ const createUser = (newUser) => {
 
 
 button.addEventListener("click", () => {
-  console.log("Click registrado")
   fetch("https://jsonplaceholder.typicode.com/users", {
     method: "POST",
     body: JSON.stringify({
@@ -121,27 +139,14 @@ button.addEventListener("click", () => {
     if (res.ok) {
       if (input1.value !== "" && input2.value !== "" && input3.value !== "" && input4.value !== "") {
         createUser({
+          id: 11, // hard-coding for now - NOT FINISHED
           name: input1.value, 
           username: input2.value, 
           email: input3.value, 
-          phone: input4.value
+          phone: input4.value,
+          deleteBtn: "x"
         });
       };
     }
   });
 });
-
-
-
-
-// DELETE
-// td.addEventListener("click", () => {
-//   confirm(
-//     "You are trying to delete a user, are you sure you want to continue?"
-//       ? Yes
-//       : No
-//   );
-//   if (Yes) {
-//     alert("User deleted successfully");
-//   }
-// });

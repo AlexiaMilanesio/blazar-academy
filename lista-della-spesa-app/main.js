@@ -80,8 +80,6 @@ window.addEventListener("load", () => {
   const li = getLi();
 
   for (const item of li) {
-    console.log(item);
-    
     tasks.map((task) => {
       if (task.name === item.innerText) {
         if (task.checked) {
