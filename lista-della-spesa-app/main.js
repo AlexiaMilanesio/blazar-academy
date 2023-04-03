@@ -15,7 +15,7 @@ document.body.appendChild(input);
 document.body.appendChild(button);
 document.body.appendChild(list);
 
-const getLi = () => {
+const getListItems = () => {
   return Array.from(document.querySelectorAll("li"));
 };
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTodo(savedTaskText.name);
   });
 
-  const li = getLi();
+  const li = getListItems();
 
   for (const item of li) {
     item.addEventListener("click", () => {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("load", () => {
-  const li = getLi();
+  const li = getListItems();
 
   for (const item of li) {
     tasks.map((task) => {
