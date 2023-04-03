@@ -80,7 +80,7 @@ td:last-child {
 }
 
 td:last-child:hover {
-  border: 2px solid yellow;
+  border: 2px solid black;
   cursor: pointer;
 }
 
@@ -118,5 +118,5 @@ button {
 
 button:hover {
     cursor: pointer;
-    border: 2px solid yellow;
+    border: 2px solid white;
 }
