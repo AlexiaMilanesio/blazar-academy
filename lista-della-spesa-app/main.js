@@ -29,27 +29,26 @@ const updateTasks = (updatingFn) => {
   saveTasksToLocalStorage()
 }
 
-// RENDER TASKS
 const createTask = (text) => {
   const newTask = document.createElement("li");
   newTask.textContent = text;
   list.appendChild(newTask);
 
-  newTask.addEventListener("click", () => {
-    // COMPLETED TASK
-    // Marked as completed
+  const toggleCompletion = () => {
     newTask.classList.toggle("completed");
     updateTasks((tasks) => tasks.map((task) => {
       if (task.name === newTask.innerHTML) task.checked = !task.checked;
       return task;
     }))
-  });
-  
-  newTask.addEventListener('dblclick', () => {
-    // Remove from DOM
+  }
+
+  const remove = () => {
     newTask.remove();
     updateTasks((tasks) => tasks.filter((task) => task.name !== newTask.innerHTML))
-  })
+  }
+
+  newTask.addEventListener("click", toggleCompletion);
+  newTask.addEventListener('dblclick', remove)
 };
 
 // When page loads get tasks from local storage and create them
