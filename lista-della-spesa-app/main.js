@@ -85,17 +85,21 @@ function markTasksCompletion() {
   const li = getListItems();
 
   for (const item of li) {
-    tasks.map((task) => {
-      if (task.name === item.innerText) {
-        if (task.checked) {
-          item.classList.add("completed");
-        } else if (!task.checked) {
-          if (item.classList.contains("completed"))
-            item.classList.remove("completed");
-        }
-      }
-    });
+    addCompletionStyle(item);
   }
+}
+
+function addCompletionStyle(item) {
+  tasks.map((task) => {
+    if (task.name === item.innerText) {
+      if (task.checked) {
+        item.classList.add("completed");
+      } else if (!task.checked) {
+        if (item.classList.contains("completed"))
+          item.classList.remove("completed");
+      }
+    }
+  });
 }
 
 function saveTasksToLocalStorage() {
