@@ -51,15 +51,7 @@ const createTask = (text) => {
   newTask.addEventListener('dblclick', remove)
 };
 
-// When page loads get tasks from local storage and create them
-document.addEventListener("DOMContentLoaded", () => {
-  getTasksFromLocalStorage();
-
-  tasks.forEach((savedTaskText) => {
-    createTask(savedTaskText.name);
-  });
-
-});
+loadAndCreateTasks();
 
 window.addEventListener("load", () => {
   markTasksCompletion();
@@ -80,6 +72,17 @@ const addTodo = () => {
 };
 
 button.addEventListener("click", addTodo);
+
+function loadAndCreateTasks() {
+  document.addEventListener("DOMContentLoaded", () => {
+    getTasksFromLocalStorage();
+
+    tasks.forEach((savedTaskText) => {
+      createTask(savedTaskText.name);
+    });
+
+  });
+}
 
 function markTasksCompletion() {
   const li = getListItems();
