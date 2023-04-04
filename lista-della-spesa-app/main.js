@@ -18,8 +18,6 @@ const getListItems = () => {
   return Array.from(document.querySelectorAll("li"));
 };
 
-// Retrive tasks from
-localStorage;
 const getTasksFromLocalStorage = () => {
   tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 };
@@ -57,7 +55,6 @@ window.addEventListener("load", () => {
   markTasksCompletion();
 });
 
-// ADD-CREATE NEW TASK
 const addTodo = () => {
   if (input.value.trim() !== "") {
     updateTasks(tasks => tasks.concat({
