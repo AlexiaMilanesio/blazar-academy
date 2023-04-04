@@ -24,6 +24,11 @@ const getTasksFromLocalStorage = () => {
   tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 };
 
+const updateTasks = (updatingFn) => {
+  tasks = updatingFn(tasks);
+  saveTasksToLocalStorage()
+}
+
 // RENDER TASKS
 const createTask = (text) => {
   const newTask = document.createElement("li");
@@ -34,22 +39,16 @@ const createTask = (text) => {
     // COMPLETED TASK
     // Marked as completed
     newTask.classList.toggle("completed");
-    // Update checked value in tasks array
-    tasks = tasks.map((task) => {
+    updateTasks((tasks) => tasks.map((task) => {
       if (task.name === newTask.innerHTML) task.checked = !task.checked;
       return task;
-    });
-
-    saveTasksToLocalStorage();
+    }))
   });
   
   newTask.addEventListener('dblclick', () => {
     // Remove from DOM
     newTask.remove();
-    // Remove from tasks array
-    tasks = tasks.filter((task) => task.name !== newTask.innerHTML);
-    
-    saveTasksToLocalStorage();
+    updateTasks((tasks) => tasks.filter((task) => task.name !== newTask.innerHTML))
   })
 };
 
@@ -83,13 +82,11 @@ window.addEventListener("load", () => {
 // ADD-CREATE NEW TASK
 const addTodo = () => {
   if (input.value !== "" && input.value !== " ") {
-    tasks.push({
+    updateTasks(tasks => tasks.concat({
       name: input.value,
       checked: false,
-    });
+    }))
 
-    saveTasksToLocalStorage();
-    
     createTask(input.value); 
 
     input.value = "";
