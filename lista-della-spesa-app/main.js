@@ -6,13 +6,19 @@ const list = document.createElement("ul");
 let tasks;
 let taskId = 0;
 
-title.textContent = "Lista della spesa";
-button.textContent = "+";
-
-document.body.appendChild(title);
-document.body.appendChild(input);
-document.body.appendChild(button);
-document.body.appendChild(list);
+const init = () => {
+  title.textContent = "Lista della spesa";
+  button.textContent = "+";
+  
+  document.body.appendChild(title);
+  document.body.appendChild(input);
+  document.body.appendChild(button);
+  document.body.appendChild(list);
+  
+  button.addEventListener("click", addTodo);
+  
+  loadAndCreateTasks();
+}
 
 const getListItems = () => {
   return Array.from(document.querySelectorAll("li"));
@@ -51,8 +57,6 @@ const createTask = (text) => {
   newTask.addEventListener('dblclick', remove)
 };
 
-loadAndCreateTasks();
-
 const addTodo = () => {
   if (input.value.trim() !== "") {
     updateTasks(tasks => tasks.concat({
@@ -65,8 +69,6 @@ const addTodo = () => {
     input.value = "";
   }
 };
-
-button.addEventListener("click", addTodo);
 
 function loadAndCreateTasks() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -96,3 +98,4 @@ function saveTasksToLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+init();
