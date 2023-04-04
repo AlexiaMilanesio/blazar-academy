@@ -63,20 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("load", () => {
-  const li = getListItems();
-
-  for (const item of li) {
-    tasks.map((task) => {
-      if (task.name === item.innerText) {
-        if (task.checked) {
-          item.classList.add("completed");
-        } else if (!task.checked) {
-          if (item.classList.contains("completed"))
-            item.classList.remove("completed");
-        }
-      }
-    });
-  }
+  markTasksCompletion();
 });
 
 // ADD-CREATE NEW TASK
@@ -94,6 +81,24 @@ const addTodo = () => {
 };
 
 button.addEventListener("click", addTodo);
+
+function markTasksCompletion() {
+  const li = getListItems();
+
+  for (const item of li) {
+    tasks.map((task) => {
+      if (task.name === item.innerText) {
+        if (task.checked) {
+          item.classList.add("completed");
+        } else if (!task.checked) {
+          if (item.classList.contains("completed"))
+            item.classList.remove("completed");
+        }
+      }
+    });
+  }
+}
+
 function saveTasksToLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
