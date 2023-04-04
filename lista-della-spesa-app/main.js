@@ -21,10 +21,6 @@
     loadAndCreateTasks();
   };
 
-  const getListItems = () => {
-    return Array.from(document.querySelectorAll("li"));
-  };
-
   const getTasksFromLocalStorage = () => {
     tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   };
