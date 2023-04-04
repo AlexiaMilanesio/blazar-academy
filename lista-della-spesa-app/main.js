@@ -1,101 +1,108 @@
-const title = document.createElement("h1");
-const input = document.createElement("input");
-const button = document.createElement("button");
-const list = document.createElement("ul");
+(function () {
+  const title = document.createElement("h1");
+  const input = document.createElement("input");
+  const button = document.createElement("button");
+  const list = document.createElement("ul");
 
-let tasks;
-let taskId = 0;
+  let tasks;
+  let taskId = 0;
 
-const init = () => {
-  title.textContent = "Lista della spesa";
-  button.textContent = "+";
-  
-  document.body.appendChild(title);
-  document.body.appendChild(input);
-  document.body.appendChild(button);
-  document.body.appendChild(list);
-  
-  button.addEventListener("click", addTodo);
-  
-  loadAndCreateTasks();
-}
+  const init = () => {
+    title.textContent = "Lista della spesa";
+    button.textContent = "+";
 
-const getListItems = () => {
-  return Array.from(document.querySelectorAll("li"));
-};
+    document.body.appendChild(title);
+    document.body.appendChild(input);
+    document.body.appendChild(button);
+    document.body.appendChild(list);
 
-const getTasksFromLocalStorage = () => {
-  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-};
+    button.addEventListener("click", addTodo);
 
-const updateTasks = (updatingFn) => {
-  tasks = updatingFn(tasks);
-  saveTasksToLocalStorage()
-}
+    loadAndCreateTasks();
+  };
 
-const createTask = (text) => {
-  const newTask = document.createElement("li");
-  newTask.textContent = text;
-  list.appendChild(newTask);
+  const getListItems = () => {
+    return Array.from(document.querySelectorAll("li"));
+  };
 
-  addCompletionStyle(newTask)
+  const getTasksFromLocalStorage = () => {
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  };
 
-  const toggleCompletion = () => {
-    newTask.classList.toggle("completed");
-    updateTasks((tasks) => tasks.map((task) => {
-      if (task.name === newTask.innerHTML) task.checked = !task.checked;
-      return task;
-    }))
-  }
+  const updateTasks = (updatingFn) => {
+    tasks = updatingFn(tasks);
+    saveTasksToLocalStorage();
+  };
 
-  const remove = () => {
-    newTask.remove();
-    updateTasks((tasks) => tasks.filter((task) => task.name !== newTask.innerHTML))
-  }
+  const createTask = (text) => {
+    const newTask = document.createElement("li");
+    newTask.textContent = text;
+    list.appendChild(newTask);
 
-  newTask.addEventListener("click", toggleCompletion);
-  newTask.addEventListener('dblclick', remove)
-};
+    addCompletionStyle(newTask);
 
-const addTodo = () => {
-  if (input.value.trim() !== "") {
-    updateTasks(tasks => tasks.concat({
-      name: input.value,
-      checked: false,
-    }))
+    const toggleCompletion = () => {
+      newTask.classList.toggle("completed");
+      updateTasks((tasks) =>
+        tasks.map((task) => {
+          if (task.name === newTask.innerHTML) task.checked = !task.checked;
+          return task;
+        })
+      );
+    };
 
-    createTask(input.value); 
+    const remove = () => {
+      newTask.remove();
+      updateTasks((tasks) =>
+        tasks.filter((task) => task.name !== newTask.innerHTML)
+      );
+    };
 
-    input.value = "";
-  }
-};
+    newTask.addEventListener("click", toggleCompletion);
+    newTask.addEventListener("dblclick", remove);
+  };
 
-function loadAndCreateTasks() {
-  document.addEventListener("DOMContentLoaded", () => {
-    getTasksFromLocalStorage();
+  const addTodo = () => {
+    if (input.value.trim() !== "") {
+      updateTasks((tasks) =>
+        tasks.concat({
+          name: input.value,
+          checked: false,
+        })
+      );
 
-    tasks.forEach((savedTaskText) => {
-      createTask(savedTaskText.name);
-    });
+      createTask(input.value);
 
-  });
-}
-
-function addCompletionStyle(item) {
-  tasks.map((task) => {
-    if (task.name === item.innerText) {
-      if (task.checked) {
-        item.classList.add("completed");
-      } else if (!task.checked) {
-        if (item.classList.contains("completed"))
-          item.classList.remove("completed");
-      }
+      input.value = "";
     }
-  });
-}
+  };
 
-function saveTasksToLocalStorage() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+  function loadAndCreateTasks() {
+    document.addEventListener("DOMContentLoaded", () => {
+      getTasksFromLocalStorage();
 
-init();
+      tasks.forEach((savedTaskText) => {
+        createTask(savedTaskText.name);
+      });
+    });
+  }
+
+  function addCompletionStyle(item) {
+    tasks.map((task) => {
+      if (task.name === item.innerText) {
+        if (task.checked) {
+          item.classList.add("completed");
+        } else if (!task.checked) {
+          if (item.classList.contains("completed"))
+            item.classList.remove("completed");
+        }
+      }
+    });
+  }
+
+  function saveTasksToLocalStorage() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  init();
+})();
