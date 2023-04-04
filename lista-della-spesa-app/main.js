@@ -32,6 +32,8 @@ const createTask = (text) => {
   newTask.textContent = text;
   list.appendChild(newTask);
 
+  addCompletionStyle(newTask)
+
   const toggleCompletion = () => {
     newTask.classList.toggle("completed");
     updateTasks((tasks) => tasks.map((task) => {
@@ -50,10 +52,6 @@ const createTask = (text) => {
 };
 
 loadAndCreateTasks();
-
-window.addEventListener("load", () => {
-  markTasksCompletion();
-});
 
 const addTodo = () => {
   if (input.value.trim() !== "") {
@@ -79,14 +77,6 @@ function loadAndCreateTasks() {
     });
 
   });
-}
-
-function markTasksCompletion() {
-  const li = getListItems();
-
-  for (const item of li) {
-    addCompletionStyle(item);
-  }
 }
 
 function addCompletionStyle(item) {
