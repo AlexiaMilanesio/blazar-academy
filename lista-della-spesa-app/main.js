@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
 
 // ADD-CREATE NEW TASK
 const addTodo = () => {
-  if (input.value !== "" && input.value !== " ") {
+  if (input.value.trim() !== "") {
     updateTasks(tasks => tasks.concat({
       name: input.value,
       checked: false,
