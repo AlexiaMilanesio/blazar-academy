@@ -5,7 +5,6 @@
   const list = document.createElement("ul");
 
   let tasks;
-  let taskId = 0;
 
   const init = () => {
     title.textContent = "Lista della spesa";
