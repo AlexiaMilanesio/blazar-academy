@@ -1,85 +1,89 @@
-const title = document.createElement("h1");
-const input = document.createElement("input");
-const button = document.createElement("button");
-const list = document.createElement("ul");
+(function () {
+  const title = document.createElement("h1");
+  const input = document.createElement("input");
+  const button = document.createElement("button");
+  const list = document.createElement("ul");
 
-let tasks;
-let taskId = 0;
-let clickCount = 0;
+  let tasks;
+  let taskId = 0;
 
-title.textContent = "Lista della spesa";
-button.textContent = "+";
+  const init = () => {
+    title.textContent = "Lista della spesa";
+    button.textContent = "+";
 
-document.body.appendChild(title);
-document.body.appendChild(input);
-document.body.appendChild(button);
-document.body.appendChild(list);
+    document.body.appendChild(title);
+    document.body.appendChild(input);
+    document.body.appendChild(button);
+    document.body.appendChild(list);
 
-const getLi = () => {
-  return Array.from(document.querySelectorAll("li"));
-};
+    button.addEventListener("click", addTodo);
 
-// Retrive tasks from
-localStorage;
-const getTasksFromLocalStorage = () => {
-  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-};
+    loadAndCreateTasks();
+  };
 
-// RENDER TASKS
-const renderTodo = (text) => {
-  const newTask = document.createElement("li");
-  newTask.textContent = text;
-  list.appendChild(newTask);
-};
+  const getTasksFromLocalStorage = () => {
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  };
 
-// When page loads get tasks from local storage and create them
-document.addEventListener("DOMContentLoaded", () => {
-  getTasksFromLocalStorage();
+  const updateTasks = (updatingFn) => {
+    tasks = updatingFn(tasks);
+    saveTasksToLocalStorage();
+  };
 
-  tasks.forEach((savedTaskText) => {
-    renderTodo(savedTaskText.name);
-  });
+  const createTask = (text) => {
+    const newTask = document.createElement("li");
+    newTask.textContent = text;
+    list.appendChild(newTask);
 
-  const li = getLi();
+    addCompletionStyle(newTask);
 
-  for (const item of li) {
-    item.addEventListener("click", () => {
-      clickCount++;
-
-      // COMPLETED TASK
-      if (clickCount === 1) {
-        // Marked as completed
-        item.classList.toggle("completed");
-        // Update checked value in tasks array
-        tasks = tasks.map((task) => {
-          if (task.name === item.innerHTML) task.checked = !task.checked;
+    const toggleCompletion = () => {
+      newTask.classList.toggle("completed");
+      updateTasks((tasks) =>
+        tasks.map((task) => {
+          if (task.name === newTask.innerHTML) task.checked = !task.checked;
           return task;
-        });
-        // Update local storage
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        })
+      );
+    };
 
-        setTimeout(() => (clickCount = 0), 300);
-      }
+    const remove = () => {
+      newTask.remove();
+      updateTasks((tasks) =>
+        tasks.filter((task) => task.name !== newTask.innerHTML)
+      );
+    };
 
-      // DELETE TASK
-      else if (clickCount === 2) {
-        // Remove from DOM
-        item.parentNode.removeChild(item);
-        // Remove from tasks array
-        tasks = tasks.filter((task) => task.name !== item.innerHTML);
-        // Remove from/update local storage
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+    newTask.addEventListener("click", toggleCompletion);
+    newTask.addEventListener("dblclick", remove);
+  };
 
-        clickCount = 0;
-      }
+  const addTodo = () => {
+    if (input.value.trim() !== "") {
+      updateTasks((tasks) =>
+        tasks.concat({
+          name: input.value,
+          checked: false,
+        })
+      );
+
+      createTask(input.value);
+
+      input.value = "";
+    }
+  };
+
+  function loadAndCreateTasks() {
+    document.addEventListener("DOMContentLoaded", () => {
+      getTasksFromLocalStorage();
+
+      tasks.forEach((savedTaskText) => {
+        createTask(savedTaskText.name);
+      });
     });
   }
-});
 
-window.addEventListener("load", () => {
-  const li = getLi();
-
-  for (const item of li) {
+  function addCompletionStyle(item) {
     tasks.map((task) => {
       if (task.name === item.innerText) {
         if (task.checked) {
@@ -91,26 +95,10 @@ window.addEventListener("load", () => {
       }
     });
   }
-});
 
-// ADD-CREATE NEW TASK
-const addTodo = () => {
-  if (input.value !== "" && input.value !== " ") {
-    tasks.push({
-      name: input.value,
-      checked: false,
-    });
-
-    // Save to local storage
+  function saveTasksToLocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    // Reload page
-    // TODO: come migliorare questo?
-    location.reload(); 
-    // Update DOM
-    renderTodo(input.value.name); 
-
-    input.value = "";
   }
-};
 
-button.addEventListener("click", addTodo);
+  init();
+})();

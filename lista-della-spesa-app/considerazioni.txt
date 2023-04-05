@@ -1,0 +1,29 @@
+Complimenti per l'idea di utilizzare il localStorage per conservare lo stato dell'app!
+
+Il grosso dei problemi che hai avuto è stato però causato dalla sua sincronizzazione con i dati e con il DOM.
+
+Osserva come passo passo ho RIFATTORIZZATO il codice (sistemando qualche bug qua e la).
+Come ho fatto?
+1- ho pensato ad una serie di test manuali per verificare che l'applicazione conservasse lo stesso comportamento.
+Ad es. 
+  scrivi qualcosa + clicca pulsante "+" -> il task viene creato / 
+  clicca una volta sul task -> il task viene completato /
+  refresh del browser -> i task vengono conservati 
+  etc.
+
+2 - ho attuato una piccola modifica per volta ed ogni volta ho effettuato tutti i test.
+Se i test fallivano tornavo indietro
+Se i test passavano si proseguiva
+
+Notare come non ho modificato il modo in cui hai scritto il codice, ho solo spostato funzioni e variabili qua e la.
+
+Il mio criterio di modifica è stato aumentare la leggibilità del codice, rimuovendo progressivamente i commenti. 
+Il risultato è stato che il design dell'app è migliorato.
+
+
+BONUS: 
+per evitare di lasciare variabili nel global scope è possibile usare una IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+perchè non dovremmo lasciare variabili/funzioni nel global scope? (https://www.tutorialspoint.com/what-is-global-namespace-pollution-in-javascript)
+
+
+In definitiva ottimo lavoro!
