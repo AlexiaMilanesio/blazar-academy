@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(128, 128, 128, .3);
+}
+
+button:hover {
+    background-color: rgba(173, 216, 230, .5);
+    cursor: pointer;
+}
