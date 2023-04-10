@@ -1,0 +1,36 @@
+<div class="item">
+  <div class="not-editable">
+    <input
+      #item.description
+      [id]="item.description"
+      type="checkbox"
+      (change)="item.completed = !item.completed"
+      [checked]="item.completed"
+    />
+
+    <label [for]="item.description">
+      {{ item.description }}
+    </label>
+
+    <div class="btn-wrapper" *ngIf="!editable">
+      <button class="btn btn-edit" (click)="editable = !editable">Edit</button>
+      <button class="btn btn-delete" (click)="remove.emit()">x</button>
+    </div>
+  </div>
+
+  <!-- Edition section -->
+  <div class="editable" *ngIf="editable">
+    <input
+      #editedItem
+      class="input-text"
+      placeholder="Edit item"
+      [value]="item.description"
+      (keyup.enter)="saveItem(editedItem.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn btn-cancel" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="saveItem(editedItem.value)">Save</button>
+    </div>
+  </div>
+</div>

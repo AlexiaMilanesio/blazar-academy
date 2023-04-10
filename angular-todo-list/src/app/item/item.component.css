@@ -1,0 +1,176 @@
+.item {
+  padding: 1em 0 0.75em 0;
+  text-align: left;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.not-editable {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-wrapper {
+  margin: .5em 0;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-edit {
+  margin-left: 1em;
+}
+
+.btn-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 2em;
+  margin-left: 1em;
+  background-color: rgb(242, 13, 13);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: rgb(227, 13, 13);
+}
+
+.btn-delete:active {
+  background-color: rgb(236, 54, 54);
+  border-color: #000;
+}
+
+/* edition section */
+
+.editable {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-text {
+  width: 100%;
+  padding: .5em;
+  border: 2px solid rgba(125, 191, 204, 0.9);
+  display: block;
+  box-sizing: border-box;
+  margin: .5em 0 0 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: .9em;
+}
+
+.input-text:focus,
+.input-text:hover {
+  outline: none;
+}
+
+.btn-cancel, 
+.btn-save {
+  width: 5em;
+}
+
+.btn-save {
+  background-color: rgb(36, 33, 33);
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: rgb(57, 48, 48);
+  cursor: pointer;
+}
+
+.btn-save:active {
+  background-color: rgb(42, 37, 37);
+  cursor: pointer;
+}
+
+/* custom checkboxes */
+
+/* base for label */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -.05em;
+  width: 1.25em;
+  height: 1.25em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* checked mark */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "✓";
+  position: absolute;
+  top: -.3em;
+  left: 0.08em;
+  font-size: 2em;
+  line-height: 0.8;
+  color: rgba(221, 162, 162, 0.9);
+  transition: all 0.2s;
+  font-family: "Lucida Sans Unicode", "Arial Unicode MS", Arial;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+@media (max-width: 550px) {
+  .btn-delete {
+    margin-left: .5em;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+  }
+
+  .not-editable {
+    margin-top: 1em;
+  }
+
+  .editable {
+    margin: 1em 0 .5em 0;
+  } 
+
+  .btn {
+    font-size: .8em;
+  }
+}
