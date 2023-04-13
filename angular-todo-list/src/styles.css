@@ -7,7 +7,7 @@ body {
   font-size: 1em;
   min-height: 100vh;
   background: linear-gradient(180deg, rgb(241, 216, 216), rgb(234, 195, 177)), no-repeat;
-  background: url(./assets/bg-img.png) no-repeat;
+  background: url(./images/bg-img.png) no-repeat;
   background-color: rgb(249, 238, 238);
   background-blend-mode: multiply;
   background-size: cover;
