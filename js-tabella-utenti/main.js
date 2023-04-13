@@ -39,7 +39,7 @@
     getUsers();
   };
 
-  // Generate table head
+
   const generateTableHead = (table, usersKeys) => {
     let thead = table.createTHead();
     let row = thead.insertRow();
@@ -52,7 +52,7 @@
     }
   };
 
-  // Generate table content
+
   const generateTable = (table, usersKeys) => {
     for (let user of usersKeys) {
       let row = table.insertRow();
@@ -64,6 +64,7 @@
       }
     }
   };
+
 
   const getUsers = async () => {
     let allUsers;
@@ -84,12 +85,10 @@
 
     usersKeys = Object.keys(allUsers[0]);
     usersValues = Object.values(allUsers);
-    // console.log("usersKeys:" + usersKeys); // borrar
-    // console.log("usersValues:" + usersValues); // borrar
 
     generateTableHead(table, usersKeys);
     generateTable(table, usersValues);
-    generateDeleteBtns(table, usersValues);
+    generateDeleteBtns();
 
     return allUsers;
   };
@@ -105,8 +104,8 @@
     }
   };
 
-  const addUser = () => {
-    fetch(URL, {
+  const addUser = async () => {
+    await fetch(URL, {
       method: "POST",
       body: JSON.stringify({
         name: input1.value,
@@ -123,7 +122,7 @@
           input4.value !== ""
         ) {
           createUser({
-            id: 11, // hard-coding for now - NOT FINISHED
+            id: 11, // hard-coding for now
             name: input1.value,
             username: input2.value,
             email: input3.value,
@@ -135,28 +134,69 @@
     });
   };
 
-  // NOT FINISHED
-  const deleteUser = (e) => {
-    console.log("Deleted btn clicked!" + e.target.body); // borrar
 
-    // fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`, {
-    //   method: "DELETE",
-    // })
-    //   .then((res) => res.json())
-    //   .then((user) => console.log("Deleted user: " + user.name));
+  const deleteUser = async (id) => {
+    let confirmDelete = confirm("Are you sure you want to delete this user?")
+    if (!confirmDelete) return;
+
+  
+
+    await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+      method: "DELETE",
+    })
+      .then(res => {
+        console.log(res);
+        if (!res.ok) {
+          throw new Error("User could not be deleted");
+        }
+        else {
+          const trow = document.querySelectorAll("tr");
+          Array.from(trow).map(tr => {
+            Array.from(tr.children).map(child => {
+              if (child.innerHTML === id) {
+                tr.remove();
+              }
+            })
+          })
+          console.log("User deleted succesfully");
+        }
+      })
+      .catch (error => console.log(error));
   };
 
+  
   const generateDeleteBtns = () => {
     const td = document.querySelectorAll("td");
 
+    let id = 0;
+
     Array.from(td).forEach((item) => {
       if (item.innerHTML === "x") {
-        item.addEventListener("click", (e) => deleteUser(e));
+        item.setAttribute("id", ++id);
+        item.addEventListener("click", () => deleteUser(item.id));
       }
     });
   };
 
 
-  
+  // const updateUser = (id) => {
+  //   fetch('https://jsonplaceholder.typicode.com/posts/${id}', {
+  //     method: 'PUT',
+  //     body: JSON.stringify({
+  //       id: 1,
+  //       title: 'foo',
+  //       body: 'bar',
+  //       userId: 1,
+  //     }),
+  //     headers: {
+  //       'Content-type': 'application/json; charset=UTF-8',
+  //     },
+  //   })
+  //     .then((res) => resporesnse.json())
+  //     .then((user) => console.log(user));
+  // }
+
+
+
   init();
 })();
