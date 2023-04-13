@@ -141,7 +141,7 @@
 
   
 
-    await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    await fetch(`${URL}/${id}`, {
       method: "DELETE",
     })
       .then(res => {
@@ -150,6 +150,7 @@
           throw new Error("User could not be deleted");
         }
         else {
+          /* provvisorio */
           const trow = document.querySelectorAll("tr");
           Array.from(trow).map(tr => {
             Array.from(tr.children).map(child => {
@@ -158,6 +159,7 @@
               }
             })
           })
+          /* ********** */
           console.log("User deleted succesfully");
         }
       })
@@ -180,7 +182,7 @@
 
 
   // const updateUser = (id) => {
-  //   fetch('https://jsonplaceholder.typicode.com/posts/${id}', {
+  //   fetch(`${URL}/${id}`, {
   //     method: 'PUT',
   //     body: JSON.stringify({
   //       id: 1,
