@@ -9,11 +9,16 @@ import { map, switchMap } from 'rxjs';
 
 
 const routes: Routes = [
-  { path: "sign-in", component: SignInFormComponent },
-
-  { path: "login", component: LoginComponent },
-
-  { path: "profile/:id", 
+  { 
+    path: "sign-in", 
+    component: SignInFormComponent 
+  },
+  { 
+    path: "login", 
+    component: LoginComponent 
+  },
+  { 
+    path: "profile/:id", 
     component: ProfileComponent, 
     resolve: {
       user: (snapshot: ActivatedRouteSnapshot) => {
@@ -33,9 +38,12 @@ const routes: Routes = [
             switchMap((user) => userService.getPostsByUserId(user.id))
           );
       }
-  }},
-
-  { path: "**", component: PageNotFoundComponent }
+    }
+  },
+  { 
+    path: "**", 
+    component: PageNotFoundComponent 
+  }
 ];
 
 
