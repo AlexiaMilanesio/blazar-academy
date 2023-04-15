@@ -1,0 +1,103 @@
+<div class="auth-container">
+    <mat-card class="auth-content">
+        <mat-card-header>
+            <mat-card-title>{{ getStateText() }}</mat-card-title>
+        </mat-card-header>
+
+
+        <form class="login-form" *ngIf="isLoginState()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="email" 
+                    email 
+                />
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="Password" 
+                />
+            </mat-form-field>
+    
+            <button 
+                mat-flat-button 
+                color="warn"
+                class="login-button"
+            >Login
+            </button>
+        </form>
+
+       
+
+        <form class="create-account-form" *ngIf="isRegisterState()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="email" 
+                    email 
+                />
+            </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="Password" 
+                />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Confirm password</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="confirm-password" 
+                />
+            </mat-form-field>
+    
+            <button 
+                mat-flat-button 
+                color="warn"
+                class="login-button"
+            >Create account
+            </button>
+        </form>
+
+
+
+        <form class="reset-password-form" *ngIf="isForgotPasswordState()">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input 
+                    matInput 
+                    required 
+                    name="email" 
+                    email 
+                />
+            </mat-form-field>
+    
+            <button 
+                mat-flat-button 
+                color="warn"
+                class="login-button"
+            >Reset password
+            </button>
+        </form>
+
+
+        <mat-card-actions align="end">
+            <button mat-flat-button (click)="forgotPassword()">Forgot password</button>
+            <button mat-flat-button (click)="createAccount()">Create an account</button>
+            <button mat-flat-button (click)="login()">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
