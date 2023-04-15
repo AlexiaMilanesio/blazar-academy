@@ -10,10 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ProfileComponent {
 
-  @Input() user!: IUser;
+  @Input() user: IUser;
   @Input() posts: IPost[] = [];
 
-  // Routes
+  
+  // ActivatedRoute - resolver function in app-routing.module.ts
   constructor (private activatedRoute: ActivatedRoute) {
     this.user = this.activatedRoute.snapshot.data["user"];
     this.posts = this.activatedRoute.snapshot.data["posts"];

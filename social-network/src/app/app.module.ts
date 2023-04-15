@@ -45,7 +45,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     AppRoutingModule,
 
-    // Routes configuration --> Could also be configured in app-routing.module.ts
+    // ROUTES CONFIGURATION --> Could also be configured in app-routing.module.ts
     // RouterModule.forRoot([
     //   {
     //     path: "login",
@@ -78,8 +78,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     //     path: "sign-in",
     //     component: SignInFormComponent,
     //   },
-      
     // ])
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,26 +13,26 @@ const routes: Routes = [
 
   { path: "login", component: LoginComponent },
 
-  { path: "profile/:id", component: ProfileComponent, resolve: {
-
-    user: (snapshot: ActivatedRouteSnapshot) => {
-      const id: string = snapshot.params["id"];
-      const userService = inject(UserService);
-      return userService
-        .getUsers()
-        .pipe(map((users) => users.find((u) => u.id === Number(id))));
-    },
-    
-    posts: (snapshot: ActivatedRouteSnapshot) => {
-      const id: string = snapshot.params["id"];
-      const userService = inject(UserService);
-      return   userService
-        .getUsers()
-        .pipe(
-          map((users) => users.find((u) => u.id === Number(id))!), 
-          switchMap((user) => userService.getPostsByUserId(user.id))
-        );
-    }
+  { path: "profile/:id", 
+    component: ProfileComponent, 
+    resolve: {
+      user: (snapshot: ActivatedRouteSnapshot) => {
+        const id: string = snapshot.params["id"];
+        const userService = inject(UserService);
+        return userService
+          .getUsers()
+          .pipe(map((users) => users.find((u) => u.id === Number(id))));
+      },
+      posts: (snapshot: ActivatedRouteSnapshot) => {
+        const id: string = snapshot.params["id"];
+        const userService = inject(UserService);
+        return   userService
+          .getUsers()
+          .pipe(
+            map((users) => users.find((u) => u.id === Number(id))!), 
+            switchMap((user) => userService.getPostsByUserId(user.id))
+          );
+      }
   }},
 
   { path: "**", component: PageNotFoundComponent }
