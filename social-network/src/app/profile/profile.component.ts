@@ -13,7 +13,7 @@ export class ProfileComponent {
   @Input() user!: IUser;
   @Input() posts: IPost[] = [];
 
-  // Routes!
+  // Routes
   constructor (private activatedRoute: ActivatedRoute) {
     this.user = this.activatedRoute.snapshot.data["user"];
     this.posts = this.activatedRoute.snapshot.data["posts"];

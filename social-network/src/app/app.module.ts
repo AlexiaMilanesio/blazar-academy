@@ -45,7 +45,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     AppRoutingModule,
 
-    // Configurazione delle rotte --> si può fare in un altro file
+    // Routes configuration --> Could also be configured in app-routing.module.ts
     // RouterModule.forRoot([
     //   {
     //     path: "login",

@@ -7,12 +7,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserService } from './api/user.service';
 import { map, switchMap } from 'rxjs';
 
+
 const routes: Routes = [
   { path: "sign-in", component: SignInFormComponent },
-  
+
   { path: "login", component: LoginComponent },
 
-  { path: "porfile/:id", component: ProfileComponent, resolve: {
+  { path: "profile/:id", component: ProfileComponent, resolve: {
 
     user: (snapshot: ActivatedRouteSnapshot) => {
       const id: string = snapshot.params["id"];
@@ -20,7 +21,7 @@ const routes: Routes = [
       return userService
         .getUsers()
         .pipe(map((users) => users.find((u) => u.id === Number(id))));
-    },    
+    },
     
     posts: (snapshot: ActivatedRouteSnapshot) => {
       const id: string = snapshot.params["id"];
