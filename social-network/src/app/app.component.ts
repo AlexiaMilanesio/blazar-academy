@@ -13,7 +13,7 @@ export class AppComponent {
 
   title = 'social-network';
 
-  //* OPZIONE 3
+  //* OPTION 3
   user$ = this.userService.getUsers().pipe(
     map((users) => users[3])
   );
@@ -26,7 +26,7 @@ export class AppComponent {
 
 
 
-  //* OPZIONE 2
+  //* OPTION 2
   // user$ = this.userService.getUsers().pipe(
   //   map((users) => users[3])
   // );
@@ -48,7 +48,7 @@ export class AppComponent {
 
 
 
-  //* OPZIONE 1
+  //* OPTION 1
   // user$ = this.userService.getUsers().pipe(
   //   map((users) => users[3])
   // );
