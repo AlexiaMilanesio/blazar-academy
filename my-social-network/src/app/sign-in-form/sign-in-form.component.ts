@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../api/models';
+import { UserService } from '../api/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -8,13 +10,26 @@ import { User } from '../api/models';
 })
 
 export class SignInFormComponent {
+
+  newUser!: User;
+  users: User[] = this.userService.allUsers;
+
+  constructor(private userService: UserService, private router: Router) {}
+  
   
   signIn(formValue: any) {
-    const value: User = {
-      id: Math.floor(Math.random() * 1000),
+    const id = Math.floor(Math.random() * 1000);
+
+    this.newUser = {
+      id: id,
       ...formValue
     }
-    console.log(value);
+
+    this.users.push(this.newUser);  
+    this.router.navigate([`profile/${this.newUser.id}`]);
+
+    console.log(this.newUser);  
+    console.log(this.users);
   }
 
 }

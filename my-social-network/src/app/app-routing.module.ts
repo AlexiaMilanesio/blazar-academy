@@ -29,19 +29,25 @@ const routes: Routes = [
       user: (snapshot: ActivatedRouteSnapshot) => {
         const id: string = snapshot.params["id"];
         const userService = inject(UserService);
-        return userService
-          .getUsers()
-          .pipe(map((users) => users.find((u) => u.id === Number(id))));
+        return userService.allUsers.find(user => user.id === Number(id));
+        // return userService
+        //   .getUsers()
+        //   .pipe(map((users) => users.find((u) => u.id === Number(id))));
       },
       posts: (snapshot: ActivatedRouteSnapshot) => {
         const id: string = snapshot.params["id"];
         const userService = inject(UserService);
-        return   userService
-          .getUsers()
-          .pipe(
-            map((users) => users.find((u) => u.id === Number(id))!), 
-            switchMap((user) => userService.getPostsByUserId(user.id))
-          );
+        return userService.allUsers.find(user => {
+          if (user.id === Number(id)) {
+            userService.getPostsByUserId(user.id);
+          }
+        });
+        // return userService
+        //   .getUsers()
+        //   .pipe(
+        //     map((users) => users.find((u) => u.id === Number(id))!), 
+        //     switchMap((user) => userService.getPostsByUserId(user.id))
+        //   );
       }
     }
   },

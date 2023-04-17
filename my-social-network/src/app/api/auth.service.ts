@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private router: Router) {}
 
   login(user: User){
-    if (user.username && user.password ) { 
+    if (user.username && user.password) { 
       this.loggedIn.next(true);
       this.router.navigate(['/']);
     }

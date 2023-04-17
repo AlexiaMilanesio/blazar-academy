@@ -8,15 +8,19 @@ import { map } from 'rxjs/operators';
 })
 
 export class UserService {
-  
-  allUsers: User[] = [];
-  
+
+  allUsers!: User[];
   constructor(private httpClient: HttpClient) {}
 
-
   getUsers() {
-    console.log(this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users'))
-    return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');;
+    this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe(
+      users => {
+        users.forEach(user => this.allUsers.push(user));
+        console.log(this.allUsers);
+      }
+    );
+
+    return this.allUsers;
   }
 
   getPosts() {

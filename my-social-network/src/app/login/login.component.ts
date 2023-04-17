@@ -25,7 +25,7 @@ export class LoginComponent {
     console.log(this.username, this.passwordControl.value);
 
     if (this.username && this.passwordControl.value) {
-      
+      // Search for the specific user with UserService and then redirect to profile
       // this.router.navigate([`profile/${id}`]);
     }
   }
