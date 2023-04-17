@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body { 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body { 
+    background: linear-gradient(180deg, black, rgb(1, 10, 38));
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}

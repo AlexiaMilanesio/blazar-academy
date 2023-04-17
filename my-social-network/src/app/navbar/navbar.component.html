@@ -1,0 +1,33 @@
+<nav>
+  <ul>
+    <li>
+      <a 
+        routerLink="/" 
+        routerLinkActive="link-active"
+        >Home
+      </a>
+    </li>
+    <li>
+      <a 
+        routerLink="/sign-in" 
+        routerLinkActive="link-active"
+        >Sign in
+      </a>
+    </li>
+    <li>
+      <a 
+        routerLink="/login" 
+        routerLinkActive="link-active"
+        >Register
+      </a>
+    </li>
+    <li>
+      <a 
+        *ngIf="isLoggedIn$ | async"
+        routerLink="/profile/:id"
+        routerLinkActive="link-active"
+        >Profile
+      </a>
+    </li>
+  </ul>
+</nav>
