@@ -1,33 +1,47 @@
 <nav>
   <ul>
-    <li>
-      <a 
-        routerLink="/" 
-        routerLinkActive="link-active"
-        >Home
-      </a>
-    </li>
-    <li>
-      <a 
-        routerLink="/login" 
-        routerLinkActive="link-active"
-        >Login
-      </a>
-    </li>
-    <li>
-      <a 
-        routerLink="/sign-in" 
-        routerLinkActive="link-active"
-        >Sign up
-      </a>
-    </li>
-    <li>
-      <a 
-        *ngIf="isLoggedIn$ | async"
-        routerLink="/profile/:id"
-        routerLinkActive="link-active"
-        >Profile
-      </a>
-    </li>
+    <div class="left-side">
+      <li>
+        <a 
+          routerLink="/" 
+          >Blazar Academy
+        </a>
+      </li>
+    </div>
+
+    <div class="right-side"> 
+      <li>
+        <a 
+          routerLink="" 
+          routerLinkActive="link-active"
+          [routerLinkActiveOptions]="{exact: true}" 
+          >Home
+        </a>
+      </li>
+      <li>
+        <a 
+          routerLink="/login" 
+          routerLinkActive="link-active"
+          [routerLinkActiveOptions]="{exact: true}"
+          >Login
+        </a>
+      </li>
+      <li>
+        <a 
+          routerLink="/sign-in" 
+          routerLinkActive="link-active"
+          [routerLinkActiveOptions]="{exact: true}"
+          >Sign up
+        </a>
+      </li>
+      <li>
+        <a 
+          *ngIf="isLoggedIn$ | async"
+          routerLink="/profile/:id"
+          routerLinkActive="link-active"
+          >Profile
+        </a>
+      </li>
+    </div>
   </ul>
 </nav>

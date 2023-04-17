@@ -12,10 +12,15 @@ import { Router } from '@angular/router';
 export class SignInFormComponent {
 
   newUser!: User;
+  users: User[] = [];
 
-  @Input() allUsers: User[] = this.userService.getUsers();
-
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    this.userService.getUsers().subscribe(users => {
+      users.forEach(user => {
+        this.users.push(user)
+      })
+    });
+  }
 
 
   signIn(formValue: any) {
@@ -26,11 +31,11 @@ export class SignInFormComponent {
       ...formValue
     }
 
-    this.allUsers.push(this.newUser);  
+    this.users.push(this.newUser);  
     this.router.navigate([`profile/${this.newUser.id}`]);
 
     console.log(this.newUser);  
-    console.log(this.allUsers);
+    console.log(this.users);
   }
 
 }

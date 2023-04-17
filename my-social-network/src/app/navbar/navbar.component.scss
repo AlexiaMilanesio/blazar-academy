@@ -1,30 +1,50 @@
 nav {
     padding: 1em;
-    width: inherit;
+    width: 100%;
 }
 
 ul {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
 }
 
-li {
-    list-style-type: none;
-    padding: 0 2em;
+.left-side, .right-side {
+    display: flex;
+}
 
-    a {
-        text-decoration: none;
-        color: white;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+.left-side {
+    li {
+        list-style-type: none;
+        padding: 0 2em;
+
+        a {
+            text-decoration: none;
+            color: white;
+            letter-spacing: 1px;
+        }
     }
+}
 
-    a:hover {
-        border-bottom: 1px solid white;
-        padding-bottom: .2em;
+.right-side {
+    li {
+        list-style-type: none;
+        padding: 0 2em;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        a:hover {
+            border-bottom: 1px solid white;
+            padding-bottom: .2em;
+        }
     }
 }
 
 .link-active {
-    color: rgb(47, 255, 172);
+    border-bottom: 1px solid white;
+    padding-bottom: .2em;
 }   

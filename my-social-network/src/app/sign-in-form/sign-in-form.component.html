@@ -21,6 +21,15 @@
         <mat-label>Password</mat-label>
         <input ngModel matInput required name="password" type="password" />
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input ngModel matInput name="phone" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Website</mat-label>
+        <input ngModel matInput name="website" />
+      </mat-form-field>
     
       <!-- if we wanted to separete the address section of the form in another component -->
       <app-address-inputs></app-address-inputs>
@@ -41,15 +50,6 @@
         <mat-label>Zipcode</mat-label>
         <input ngModel matInput name="zipcode" />
       </mat-form-field> -->
-    
-      <mat-form-field>
-        <mat-label>Phone</mat-label>
-        <input ngModel matInput name="phone" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Website</mat-label>
-        <input ngModel matInput name="website" />
-      </mat-form-field>
     
       <button
         type="submit"

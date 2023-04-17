@@ -13,11 +13,10 @@ export class AppComponent {
 
   title = 'social-network';
 
-  constructor(private userService: UserService) {}
-
-
 
   //* OPTION 3
+  // constructor(private userService: UserService) {}
+
   // user$ = this.userService.getUsers().pipe(
   //   map((users) => users[3])
   // );

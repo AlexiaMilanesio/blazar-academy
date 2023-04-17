@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../api/user.service';
+import { User } from '../api/models';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,8 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
+  users: User[] = [];
+
   private readonly strongPasswordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   username = '';
 
@@ -18,16 +22,30 @@ export class LoginComponent {
     Validators.pattern(this.strongPasswordRegex)
   ]);
 
-  constructor(private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    this.userService.getUsers().subscribe(users => {
+      users.forEach(user => {
+        this.users.push(user)
+      })
+    });
+  }
 
 
   login() {
     console.log(this.username, this.passwordControl.value);
 
+
     if (this.username && this.passwordControl.value) {
-      // Search for the specific user with UserService and then redirect to profile
-      // this.router.navigate([`profile/${id}`]);
+      let foundUser = this.users.find(user => user.username === this.username);
+      if (foundUser) {
+        this.router.navigate([`profile/${foundUser.id}`]);
+      } else {
+        console.log("User not found.");
+      }
     }
   }
 
 }
+
+
+ // example --> username = Bret
