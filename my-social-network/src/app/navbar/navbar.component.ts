@@ -12,14 +12,14 @@ export class NavbarComponent {
 
   isLoggedIn$!: Observable<boolean>;                  
 
-  constructor(private authService: AuthService) { }
+  // constructor(private authService: AuthService) { } 
 
-  ngOnInit() {
-    this.isLoggedIn$ = this.authService.isLoggedIn; 
-  }
+  // ngOnInit() {
+  //   this.isLoggedIn$ = this.authService.isLoggedIn; 
+  // }
 
-  onLogout(){
-    this.authService.logout();                      
-  }
+  // onLogout(){
+  //   this.authService.logout();                      
+  // }
 
 }
