@@ -24,7 +24,8 @@
 }
 
 .landing-left-content h1 {
-    color: rgb(255, 38, 0);
+    color: white;
+    text-shadow: 1px 1px 5px black;
     font-size: 5em;
     line-height: 1em;
     margin-bottom: .5em;
@@ -35,6 +36,7 @@
     font-size: 2em;
     margin-bottom: 1em;
     line-height: 1em;
+    text-shadow: 1px 1px 5px black;
 }
 
 .landing-left-content button {

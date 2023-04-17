@@ -1,42 +1,46 @@
-<mat-card>
-  <mat-card-title>Login</mat-card-title>
+<div>
+
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    
+    <mat-card-content>
   
-  <mat-card-content>
-
-    <mat-form-field>
-      <mat-label>Username</mat-label>
-      <!-- Campo gestito con NgModel: devo estrarre il formControl del ngModel -->
-      <input
-        type="text"
-        matInput
-        placeholder="Username"
-        [(ngModel)]="username"
-        [required]="true"
-        [minlength]="3"
-        [maxlength]="20"
-        #usernameControl="ngModel" 
-      />
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Password</mat-label>
-      <!-- Campo gestito con FormControl -->
-      <input 
-        matInput 
-        placeholder="Password" 
-        [formControl]="passwordControl" 
-      />
-    </mat-form-field>
-
-    <!-- Pulsante disabled se i valori di input sono invalid -->
-    <button
-      mat-raised-button
-      color="primary"
-      [disabled]="passwordControl.invalid || usernameControl.invalid"
-      (click)="login()"
-    >
-      Login
-    </button>
-
-  </mat-card-content>
-</mat-card>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <!-- Campo gestito con NgModel: devo estrarre il formControl del ngModel -->
+        <input
+          type="text"
+          matInput
+          placeholder="Username"
+          [(ngModel)]="username"
+          [required]="true"
+          [minlength]="3"
+          [maxlength]="20"
+          #usernameControl="ngModel" 
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <!-- Campo gestito con FormControl -->
+        <input 
+          matInput 
+          placeholder="Password" 
+          [formControl]="passwordControl" 
+        />
+      </mat-form-field>
+  
+      <!-- Pulsante disabled se i valori di input sono invalid -->
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="passwordControl.invalid || usernameControl.invalid"
+        (click)="login()"
+      >
+        Login
+      </button>
+  
+    </mat-card-content>
+  </mat-card>
+  
+</div>
