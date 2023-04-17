@@ -9,6 +9,7 @@
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input 
+                    #loginEmail
                     matInput 
                     required 
                     name="email" 
@@ -19,13 +20,16 @@
             <mat-form-field>
                 <mat-label>Password</mat-label>
                 <input 
+                    #loginPassword
                     matInput 
                     required 
-                    name="Password" 
+                    name="Password"
+                    type="password"
                 />
             </mat-form-field>
     
             <button 
+                (click)="login(loginEmail, loginPassword)"
                 mat-flat-button 
                 color="warn"
                 class="login-button"
@@ -39,6 +43,7 @@
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input 
+                    #registerEmail
                     matInput 
                     required 
                     name="email" 
@@ -49,22 +54,27 @@
             <mat-form-field>
                 <mat-label>Password</mat-label>
                 <input 
+                    #registerPassword
                     matInput 
                     required 
-                    name="Password" 
+                    name="Password"
+                    type="password"
                 />
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Confirm password</mat-label>
                 <input 
+                    #registerConfirmPassword
                     matInput 
                     required 
-                    name="confirm-password" 
+                    name="confirm-password"
+                    type="password"
                 />
             </mat-form-field>
     
             <button 
+                (click)="register(registerEmail, registerPassword, registerConfirmPassword)"
                 mat-flat-button 
                 color="warn"
                 class="login-button"
@@ -78,6 +88,7 @@
             <mat-form-field>
                 <mat-label>Email</mat-label>
                 <input 
+                    #resetEmail
                     matInput 
                     required 
                     name="email" 
@@ -86,6 +97,7 @@
             </mat-form-field>
     
             <button 
+                (click)="resetPassword(resetEmail)"
                 mat-flat-button 
                 color="warn"
                 class="login-button"
@@ -95,9 +107,9 @@
 
 
         <mat-card-actions align="end">
-            <button mat-flat-button (click)="forgotPassword()">Forgot password</button>
-            <button mat-flat-button (click)="createAccount()">Create an account</button>
-            <button mat-flat-button (click)="login()">Login</button>
+            <button mat-flat-button (click)="forgotPasswordSection()">Forgot password</button>
+            <button mat-flat-button (click)="createAccountSection()">Create an account</button>
+            <button mat-flat-button (click)="loginSection()">Login</button>
         </mat-card-actions>
     </mat-card>
 </div>

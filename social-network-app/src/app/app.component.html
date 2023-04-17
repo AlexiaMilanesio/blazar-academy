@@ -7,10 +7,18 @@
         </div>
         <div class="navbar-right">
             <li>
-                <a (click)="login()">Login</a>
+                <a *ngIf="!isLoggedIn()" (click)="login()">Login</a>
+            </li>
+            <li>
+                <a *ngIf="isLoggedIn() && userHasProfile">Hello, {{ userDocument.publicName }}</a>
+            </li>
+            <li>
+                <a *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
             </li>
         </div>
     </ul>
 </nav>
 
 <router-outlet></router-outlet>
+
+<app-profile [show]="isLoggedIn() && !userHasProfile"></app-profile>
