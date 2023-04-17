@@ -1,8 +1,17 @@
+div {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 article {
     border-radius: 5px;
     padding: 1em;
     display: inline-block;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px black;
+    background-color: rgba(255, 255, 255, .6);
+    margin-bottom: 1em;
+    color: black;
 }
   
 h2 {

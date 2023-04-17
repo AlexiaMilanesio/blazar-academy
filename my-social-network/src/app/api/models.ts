@@ -45,6 +45,6 @@ export interface User {
     email: Email,
     address: Address,
     phone: PhoneNumber,
-    website: Website,
-    company: Company
+    website?: Website,
+    company?: Company
   }

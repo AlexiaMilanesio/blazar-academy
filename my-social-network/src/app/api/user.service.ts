@@ -8,11 +8,15 @@ import { map } from 'rxjs/operators';
 })
 
 export class UserService {
-
+  
+  allUsers: User[] = [];
+  
   constructor(private httpClient: HttpClient) {}
 
+
   getUsers() {
-    return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users')
+    console.log(this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users'))
+    return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');;
   }
 
   getPosts() {
@@ -22,7 +26,7 @@ export class UserService {
   getPostsByUserId(id: number) {
     return this.getPosts().pipe(
       map((posts) => posts.filter(post => post.userId === id))
-    )
+    );
   }
   
 }

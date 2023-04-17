@@ -10,15 +10,15 @@ import { environment } from 'src/environments/environmens';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { AuthenticatorComponent } from './tools/authenticator/authenticator.component';
+import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
+import { ProfileComponent } from './tools/profile/profile.component';
 
 // Angular Material UI
 import { MatButtonModule } from '@angular/material/button';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatCardModule } from '@angular/material/card';
-import { AuthenticatorComponent } from './tools/authenticator/authenticator.component';
 import { MatInputModule } from '@angular/material/input';
-import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
-import { ProfileComponent } from './tools/profile/profile.component';
 
 @NgModule({
   declarations: [

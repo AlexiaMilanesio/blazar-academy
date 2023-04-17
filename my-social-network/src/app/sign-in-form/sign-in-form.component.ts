@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../api/models';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -9,7 +10,11 @@ import { Component } from '@angular/core';
 export class SignInFormComponent {
   
   signIn(formValue: any) {
-    console.log(formValue);
+    const value: User = {
+      id: Math.floor(Math.random() * 1000),
+      ...formValue
+    }
+    console.log(value);
   }
 
 }
@@ -17,7 +22,7 @@ export class SignInFormComponent {
 
 /*
   {
-    id: ID,
+    id: ID,              --> ID: number
     name: string,
     username: string,
     email: Email,
@@ -28,7 +33,7 @@ export class SignInFormComponent {
       zipcode: string,
       geo: Coordinates
     },
-    phone: PhoneNumber,
-    website: Website,
+    phone?: PhoneNumber,
+    website?: Website,
   }
 */

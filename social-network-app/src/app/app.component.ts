@@ -16,7 +16,7 @@ export class AppComponent {
   auth = new FirebaseTSAuth();
   firestore = new FirebaseTSFirestore();
   userHasProfile = true;
-  userDocument: UserDocument = {publicName: '', description: ''};
+  userDocument: UserDocument = { publicName: '', description: '' };
 
   constructor(private loginSheet: MatBottomSheet, private router: Router) {
     this.auth.listenToSignInStateChanges(user => [
