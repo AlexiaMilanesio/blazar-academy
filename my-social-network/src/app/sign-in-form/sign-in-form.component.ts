@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../api/models';
 import { UserService } from '../api/user.service';
 import { Router } from '@angular/router';
@@ -12,11 +12,12 @@ import { Router } from '@angular/router';
 export class SignInFormComponent {
 
   newUser!: User;
-  users: User[] = this.userService.allUsers;
+
+  @Input() allUsers: User[] = this.userService.getUsers();
 
   constructor(private userService: UserService, private router: Router) {}
-  
-  
+
+
   signIn(formValue: any) {
     const id = Math.floor(Math.random() * 1000);
 
@@ -25,11 +26,11 @@ export class SignInFormComponent {
       ...formValue
     }
 
-    this.users.push(this.newUser);  
+    this.allUsers.push(this.newUser);  
     this.router.navigate([`profile/${this.newUser.id}`]);
 
     console.log(this.newUser);  
-    console.log(this.users);
+    console.log(this.allUsers);
   }
 
 }

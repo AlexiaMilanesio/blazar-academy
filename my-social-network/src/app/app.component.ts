@@ -13,7 +13,8 @@ export class AppComponent {
 
   title = 'social-network';
 
-  // constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {}
+
 
 
   //* OPTION 3
