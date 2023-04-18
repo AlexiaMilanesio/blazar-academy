@@ -1,26 +1,30 @@
 import { NgModule, inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// Modules
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// Router configuration
+import { ActivatedRouteSnapshot, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+// Services
+import { UserService } from './api/user.service';
+import { map, switchMap } from 'rxjs';
+// Components
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { AddressInputsComponent } from './address-inputs/address-inputs.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRouteSnapshot, RouterModule } from '@angular/router';
-import { UserService } from './api/user.service';
-import { map, switchMap } from 'rxjs';
-import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+// Angular material
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -83,7 +87,7 @@ import { HomeComponent } from './home/home.component';
     // ])
     
   ],
-  providers: [],
+  providers: [], // Services - Module providers
   bootstrap: [AppComponent]
 })
 export class AppModule { }

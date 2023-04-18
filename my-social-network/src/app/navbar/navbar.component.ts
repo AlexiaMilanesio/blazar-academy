@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../api/auth.service';
 
@@ -8,18 +8,18 @@ import { AuthService } from '../api/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
   isLoggedIn$!: Observable<boolean>;                  
 
-  // constructor(private authService: AuthService) { } 
+  constructor(private authService: AuthService) {} 
 
-  // ngOnInit() {
-  //   this.isLoggedIn$ = this.authService.isLoggedIn; 
-  // }
+  ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn; 
+  }
 
-  // onLogout(){
-  //   this.authService.logout();                      
-  // }
+  onLogout(){
+    this.authService.logout();                      
+  }
 
 }

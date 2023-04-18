@@ -15,15 +15,15 @@ export class AppComponent {
 
 
   //* OPTION 3
-  // constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
-  // user$ = this.userService.getUsers().pipe(
-  //   map((users) => users[3])
-  // );
+  user$ = this.userService.getUsers().pipe(
+    map((users) => users[3])
+  );
 
-  // posts$ = this.user$.pipe(
-  //   switchMap((user) => this.userService.getPostsByUserId(user.id))
-  // );
+  posts$ = this.user$.pipe(
+    switchMap((user) => this.userService.getPostsByUserId(user.id))
+  );
 
 
 

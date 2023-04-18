@@ -3,16 +3,17 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './models';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
 
   private loggedIn = new BehaviorSubject<boolean>(false); 
+  
+  constructor(private router: Router) {}
+
 
   get isLoggedIn() {
-    return this.loggedIn.asObservable(); 
+    return this.loggedIn; 
   }
-
-  constructor(private router: Router) {}
 
   login(user: User){
     if (user.username && user.password) { 

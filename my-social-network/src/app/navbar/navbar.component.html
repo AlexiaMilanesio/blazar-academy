@@ -28,7 +28,7 @@
       </li>
       <li>
         <a 
-          routerLink="/sign-in" 
+            routerLink="/sign-in" 
           routerLinkActive="link-active"
           [routerLinkActiveOptions]="{exact: true}"
           >Sign up
@@ -40,6 +40,14 @@
           routerLink="/profile/:id"
           routerLinkActive="link-active"
           >Profile
+        </a>
+      </li>
+      <li>
+        <a 
+          *ngIf="isLoggedIn$ | async"
+          routerLink="/"
+          (click)="onLogout()"
+          >Logout
         </a>
       </li>
     </div>
