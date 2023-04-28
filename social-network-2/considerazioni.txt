@@ -1,0 +1,21 @@
+Ciao Alexia. Congratulazioni per aver completato il corso!
+
+Ti scrivo qualche ultimo accorgimento sul tuo lavoro. Sono decisamente contento della tua proattività nel cercare costantemente di sfidarti, stavolta integrando firebase e 
+cercando di creare un'applicazione quanto più simile ad una reale. Dal punto di vista stilistico devo insistere sui componenti. Più componenti. Creando componenti
+il codice si riduce in dimensioni e quindi diventa più facile da ragionare. In ogni caso, un degno completamento di corso. Inoltre, per quanto riguarda i form, usa sempre 
+i sistemi di angular (template-driven/reactive) e utilizza i validatori. I validatori non funzionano senza ngModel/FormControl.
+
+Concludo con qualche consiglio di routine.
+
+Ricorda di pulire il codice e rifattorizzare prima di fare git push: 
+ - crea nuovi componenti che rappresentano elementi logici dell'applicazione a cui ti sembra logico dare un nome (es. Todo-list, todo-item).
+ - rimuovi componenti che non sembrano avere più un senso logico, e il cui nome non significa niente.
+ - scomponi le funzioni troppo lunghe e con troppi parametri. Una funzione deve fare una sola cosa...
+ - rinomina funzioni e variabili se pensi che il loro nome può migliorare ed essere più esplicito.
+ - semplifica le logiche con i boolean il più possibile, meno if (e meno if innestati) ci sono, e più il codice è facile da leggere.
+ etc. etc.
+
+Ovviamente non è finita qui. Non si finisce mai di migliorare. 
+Cerca di rendere il codice leggibile, studia nuove tecniche per farlo. Questo è un lavoro di squadra.
+Allarga la tua comprensione della programmazione imparando nuovi linguaggi, nuove tecnologie e nuovi ambiti. 
+Sperimenta in continuazione, anche a costo di sbagliare. C'è sempre git per rimediare agli errori.
