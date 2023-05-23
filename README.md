@@ -2,6 +2,21 @@
 
 ##### Frontend projects 
 
+## Page copy - CSS
+<img width="1440" alt="home-css-1" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/de877e41-473b-4954-83d7-6839e26e794b">
+<img width="1440" alt="home-css-2" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/3dbe156b-d860-4ab2-a4b1-44fc59cde3c6">
+<img width="1440" alt="home-css-3" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/ad47c620-c60a-4ebc-a812-75fdccf40dad">
+<img width="1440" alt="home-css-4" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/d537604e-3081-4bff-911b-4ddef6a7e13c">
+<img width="1440" alt="home-css-5" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/e01dbd08-0e8c-4353-8cf7-a65b64a7c282">
+<img width="1440" alt="home-css-6" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/9994d867-0cd4-424e-a13b-3bdccb9ed24f">
+<img width="1440" alt="home-css-7" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/064d0246-a61e-4177-8041-32e38ff9e822">
+<img width="1440" alt="home-css-8" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/c24caa78-5013-40ca-a3b5-99ba794a6b69">
+<img width="1440" alt="home-css-9" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/28a872a8-3a0b-4d5a-965a-950b299a0433">
+<img width="1440" alt="home-css-10" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/50370dd4-582b-4ed7-9480-c80c6a80396b">
+<img width="1440" alt="home-css-11" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/fe751e41-3c84-4d90-987b-db5bd43e6c8f">
+<img width="1440" alt="home-css-12" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/0d5c4b16-c47e-4428-9ee5-3ee0aea194be">
+
+
 ## Todo list - Angular
 <img width="1440" alt="todo-list-1-angular" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/426be25f-02c1-42e7-9808-83e0b36c2a46">
 <img width="1440" alt="todo-list-2-angular" src="https://github.com/AlexiaMilanesio/blazar-academy-frontend/assets/101998432/833fc4b6-12d7-4d79-a2f2-e617be767f6d">
