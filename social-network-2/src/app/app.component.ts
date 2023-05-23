@@ -52,6 +52,7 @@ export class AppComponent {
   login() {
     this.loginSheet.open(AuthenticatorComponent);
   }
+  
   logout() {
     this.auth.signOut();
   }
