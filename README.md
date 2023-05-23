@@ -1,4 +1,4 @@
-# Full Stack Development Academy - Blazar Academ7 - Blazar Group
+# Full Stack Development Academy - Blazar Academy - Blazar Group
 
 ##### Frontend projects 
 
